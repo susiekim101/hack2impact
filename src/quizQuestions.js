@@ -2,23 +2,18 @@ const questions = [
   {
     section: "Basic Information",
     questions: [
-      { id: "firstName", type: "text", label: "First Name" },
-      { id: "lastName", type: "text", label: "Last Name" },
-      { id: "phone", type: "text", label: "Phone Number" },
-      { id: "email", type: "email", label: "Email" },
-      { id: "birthdate", type: "date", label: "Birthdate" },
-      {
-        id: "gender",
-        type: "select",
-        label: "Gender",
+      { id: "firstName", type: "text", label: "First Name", style: "small" },
+      { id: "lastName", type: "text", label: "Last Name", style: "small" },
+      { id: "phone", type: "text", label: "Phone Number", style: "small" },
+      { id: "email", type: "email", label: "Email", style: "small"},
+      { id: "birthdate", type: "date", label: "Birthdate", style: "small" },
+      { id: "gender", type: "select", label: "Gender", style: "small",
         options: ["Male", "Female", "Non-binary", "Prefer not to say"],
       },
-      {
-        id: "ethnicity",
-        type: "multiselect",
-        label:
+      { id: "ethnicity", type: "multiselect", label:
           "Which of the following ethnicities/races do you identify with? (Select all that apply)",
-        options: [
+        style: "large",
+          options: [
           "Latinx/Hispanic",
           "Black/African American",
           "Pacific Islander",
@@ -28,17 +23,10 @@ const questions = [
           "Other",
         ],
       },
-      {
-        id: "household",
-        type: "select",
-        label: "How many people are in your household?",
+      { id: "household", type: "select", label: "How many people are in your household?", style: "large",
         options: ["1", "2", "3", "4+"],
       },
-      {
-        id: "disabilities",
-        type: "textarea",
-        label: "Do you have any disabilities? (free response)",
-      },
+      { id: "disabilities", type: "textarea", label: "Do you have any disabilities?", style:"large" },
     ],
   },
 

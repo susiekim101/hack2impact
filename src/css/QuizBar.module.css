@@ -1,6 +1,6 @@
 .completed {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     margin: 5px;
     border-radius: 50%;
     background-color: #C09726;
@@ -8,8 +8,8 @@
 }
 
 .remaining {
-    width: 20px;
-    height: 20px;
+    width: 10px;
+    height: 10px;
     margin: 5px;
     border-radius: 50%;
     background-color: #650909;
@@ -19,4 +19,5 @@
 .row {
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
