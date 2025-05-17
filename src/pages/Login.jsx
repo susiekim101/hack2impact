@@ -8,13 +8,36 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [submitError, setSubmitError] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    setError("");
+
+  setEmailError("");
+  setPasswordError("");
+  setSubmitError("");
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  let valid = true;
+
+  if (!emailRegex.test(email)) {
+    setEmailError("Please enter a valid email address.");
+    valid = false;
+  }
+
+  if (password.length < 6) {
+    setPasswordError("Password must be at least 6 characters.");
+    valid = false;
+  }
+
+  if (!valid) return;
+
     try {
       const user = await login(email, password);
       console.log("User logged in:", user);
+      setError("");
       navigate("/quiz");
       // Redirect or perform any other action after successful login
     } catch (error) {
@@ -40,24 +63,32 @@ export default function Login() {
       <div>
         <p>Log In</p>
       </div>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} noValidate>
         <input
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={(e) => {
+            setEmail(e.target.value)
+            setEmailError("")
+          }}
           required
         />
+        {emailError && <p className={styles.errorText}>{emailError}</p>}
         <input
           type="password"
           placeholder="Password"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value)
+            setPasswordError("")
+          }}
           required
         />
+        {passwordError && <p className={styles.errorText}>{passwordError}</p>}
         <button type="submit">Submit</button>
       </form>
-      <button onClick={handleGoogleLogin}>Log in with Google</button>
+      <button onClick={handleGoogleLogin} className={styles.googleButton}>Log in with Google</button>
       {error && <p className={styles.errorText}>{error}</p>}
       <Link to="/signup" className={styles.link}>Don't have an account? Sign up</Link>
     </div>
