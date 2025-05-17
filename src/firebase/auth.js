@@ -1,5 +1,4 @@
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -7,9 +6,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 
-import { app, provider } from "./config";
-
-const auth = getAuth(app);
+import { auth, provider } from "./config";
 
 export const signup = async (email, password) => {
   try {

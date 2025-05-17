@@ -1,17 +1,61 @@
-import styles from '../css/Login.module.css';
+import styles from "../css/Login.module.css";
+import { login, loginWithGoogle } from "../firebase/auth.js";
+import { useState } from "react";
 
 export default function Login() {
-    console.log("Login component rendered");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+    try {
+      const user = await login(email, password);
+      console.log("User logged in:", user);
+      // Redirect or perform any other action after successful login
+    } catch (error) {
+      setError("Login failed. Please check your credentials.");
+      console.error("Error logging in:", error);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const user = await loginWithGoogle();
+      console.log("User logged in with Google:", user);
+      // Redirect or perform any other action after successful login
+    } catch (error) {
+      setError("Login failed. Please try again.");
+      console.error("Error logging in with Google:", error);
+    }
+  };
+
+  console.log("Login component rendered");
   return (
     <div className={styles.container}>
-        <div>
-            <p>login</p>
-        </div>
-        <form method="/" action="/login">
-            <input type="text" placeholder="username"/>
-            <input type="text" placeholder="password"/>
-            <button type="submit">submit</button>
-        </form>
+      <div>
+        <p>Log In</p>
+      </div>
+      <form onSubmit={handleLogin}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button type="submit">submit</button>
+      </form>
+      <button onClick={handleGoogleLogin}>Log in with Google</button>
+      {error && <p tyle={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
