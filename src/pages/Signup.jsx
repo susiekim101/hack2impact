@@ -14,7 +14,7 @@ export default function Signup() {
     try {
       const user = await signup(email, password);
       console.log("User signed up:", user);
-        setError(""); 
+      setError("");
       navigate("/quiz");
     } catch (error) {
       setError("Sign up failed. Please check your credentials.");
@@ -57,7 +57,9 @@ export default function Signup() {
       </form>
       <button onClick={handleGoogleSignup}>Sign up with Google</button>
       {error && <p className={styles.errorText}>{error}</p>}
-      <Link to="/login" className={styles.link}>Already have an account? Log in</Link>
+      <Link to="/login" className={styles.link}>
+        Already have an account? Log in
+      </Link>
     </div>
   );
 }

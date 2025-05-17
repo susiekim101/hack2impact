@@ -1,7 +1,7 @@
 import styles from "../css/QuizBar.module.css";
 
 const QuizBar = ({ currentQuestion }) => {
-  const totalQuestions = 25;
+  const totalQuestions = 17;
   const circles = [];
 
   for (let i = 0; i < totalQuestions; i++) {
