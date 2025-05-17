@@ -1,7 +1,9 @@
-const QuizTitle = () => {
+import '../css/QuizTitle.css';
+
+const QuizTitle = ({title}) => {
     return (
         <>
-        <h1 class="text-xl">Style Assessment</h1>
+        <h1 className="title">{title}</h1>
         </>
     );
 }
