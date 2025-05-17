@@ -26,7 +26,6 @@ p {
     font-family: 'Montserrat';
     height: 7vh;
     width: 35vw;
-    margin-bottom: 1.5vh;
     border-radius: 5vh;
     align-items: center;
     padding-left: 1vw;
@@ -51,6 +50,17 @@ button {
   cursor: pointer;
 }
 
+.googleButton {
+  width: 13vw;         
+  padding: 1.5vh 0;        
+  border: 0.3vh solid #D5E4F4;  
+  border-radius: 2vh;
+  background-color: white;
+  margin-bottom: 3vhx;
+  cursor: pointer;
+  color: black;
+}
+
 form label {
   display: flex;
   flex-direction: column;
@@ -62,13 +72,13 @@ form label {
   font-size: large;
   color: red;
   align-items: center;
-  margin-top: 3vh;
+  font-weight: normal;
 }
 
 .link {
   color: #650909;
   font-family: 'Montserrat';
-  font-size: 2vh;
+  font-size: vh;
   margin-top: 3vh;
 }
 
