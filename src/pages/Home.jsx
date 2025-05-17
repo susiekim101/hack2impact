@@ -10,15 +10,17 @@ function Home() {
     const handleStart = () => {
         navigate('/quiz');
     };
+
     return (
+        <>
         <div className={styles.container}>
             <img src={styles.logo} alt="Tori in the House Logo" className="logo-image"/>
             <h1 class='text-sm'>Interior Design Quiz</h1>
         </div>
 
-          <div className={styles.button-container}>
+        <div className={styles.button-container}>
             <button className={styles.rounded-button} onClick={handleStart}> START </button>
-          </div>
+        </div>
         </>
     );
 }
