@@ -1,9 +1,9 @@
-import '../css/QuizTitle.css';
+import styles from '../css/QuizTitle.module.css';
 
 const QuizTitle = ({title}) => {
     return (
         <>
-        <h1 className="title">{title}</h1>
+        <h1 className={styles.title}>{title}</h1>
         </>
     );
 }

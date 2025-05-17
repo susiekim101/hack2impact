@@ -1,9 +1,11 @@
-import QuizBar from "./components/QuizBar";
+import QuizBar from "../components/QuizBar.jsx";
+import QuizTitle from "../components/QuizTitle.jsx";
 
 function Quiz() {
   return (
     <>
-      <QuizBar />
+      <QuizBar currentQuestion={3}/>
+      <QuizTitle title="Color Preferences"/>
     </>
   );
 }

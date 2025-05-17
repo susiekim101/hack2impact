@@ -1,9 +1,9 @@
-import './Login.css';
+import styles from '../css/Login.module.css';
 
 export default function Login() {
     console.log("Login component rendered");
   return (
-    <div className='container'>
+    <div className={styles.container}>
         <div>
             <p>login</p>
         </div>
