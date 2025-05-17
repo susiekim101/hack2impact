@@ -11,13 +11,11 @@ export default function Signup() {
 
   const handleSignup = async (e) => {
     e.preventDefault();
-    setError("");
     try {
       const user = await signup(email, password);
-      console.log("User signued up:", user);
+      console.log("User signed up:", user);
+        setError(""); 
       navigate("/quiz");
-
-      // Redirect or perform any other action after successful login
     } catch (error) {
       setError("Sign up failed. Please check your credentials.");
       console.error("Error signing up in:", error);
@@ -28,7 +26,7 @@ export default function Signup() {
     try {
       const user = await signupWithGoogle();
       console.log("User signuped up with Google:", user);
-      // Redirect or perform any other action after successful login
+      setError("");
     } catch (error) {
       setError("Sign up failed. Please try again.");
       console.error("Error signing up with Google:", error);
@@ -58,8 +56,8 @@ export default function Signup() {
         <button type="submit">Submit</button>
       </form>
       <button onClick={handleGoogleSignup}>Sign up with Google</button>
-      {error && <p tyle={{ color: "red" }}>{error}</p>}
-      <Link to="/login">Already have an account? Log in</Link>
+      {error && <p className={styles.errorText}>{error}</p>}
+      <Link to="/login" className={styles.link}>Already have an account? Log in</Link>
     </div>
   );
 }
