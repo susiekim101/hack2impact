@@ -1,8 +1,10 @@
 import styles from "../css/Login.module.css";
 import { login, loginWithGoogle } from "../firebase/auth.js";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,6 +15,7 @@ export default function Login() {
     try {
       const user = await login(email, password);
       console.log("User logged in:", user);
+      navigate("/quiz");
       // Redirect or perform any other action after successful login
     } catch (error) {
       setError("Login failed. Please check your credentials.");
@@ -52,10 +55,12 @@ export default function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">submit</button>
+        <button type="submit">Submit</button>
       </form>
       <button onClick={handleGoogleLogin}>Log in with Google</button>
       {error && <p tyle={{ color: "red" }}>{error}</p>}
+
+      <Link to="/signup">Don't have an account? Sign up</Link>
     </div>
   );
 }
