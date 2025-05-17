@@ -40,7 +40,7 @@ form {
   margin-bottom: 4vh;  
 }
 
-button {
+.button {
   width: 13vw;         
   padding: 1.5vh 0;        
   border: 0.3vh solid #650909;  

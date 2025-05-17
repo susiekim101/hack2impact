@@ -6,6 +6,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  min-height: 100%;
 }
 
 .logo {
@@ -44,8 +45,9 @@
   color: #888;
 }
 
-body {
+body, html {
   background-color: #F9F0E2;
   font-family: "Montserrat", sans-serif;
   color: #650909;
+  min-height: 100%;
 }

@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api', textRoutes);
-app.use('/api', imageRoute);
+app.use('/api', imageRoutes);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

@@ -86,7 +86,7 @@ export default function Login() {
           required
         />
         {passwordError && <p className={styles.errorText}>{passwordError}</p>}
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.button}>Submit</button>
       </form>
       <button onClick={handleGoogleLogin} className={styles.googleButton}>Log in with Google</button>
       {error && <p className={styles.errorText}>{error}</p>}

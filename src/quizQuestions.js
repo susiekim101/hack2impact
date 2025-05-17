@@ -39,25 +39,29 @@ const questions = [
         label: "Which color palettes make you feel most at ease?",
         options: [
           {
-            text: "Earthy Neutrals",
+            label: "Earthy Neutrals",
             image: "FILL IN",
           },
           {
-            text: "Ocean Blues & Greens",
+            label: "Ocean Blues & Greens",
             image: "FILL IN",
           },
           {
-            text: "Forest Greens & Browns",
+            label: "Forest Greens & Browns",
             image: "FILL IN",
           },
-          { text: "Pastels", image: "FILL IN" },
+          { 
+            label: "Pastels", 
+            image: "FILL IN" },
           {
-            text: "Monochromatic Tones",
+            label: "Monochromatic Tones",
             image: "FILL IN",
           },
-          { text: "Rich/Dark Colors", image: "FILL IN" },
+          { 
+            label: "Rich/Dark Colors", 
+            image: "FILL IN" },
           {
-            text: "Light & Airy Colors",
+            label: "Light & Airy Colors",
             image: "FILL IN",
           },
         ],
