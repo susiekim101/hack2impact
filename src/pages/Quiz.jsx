@@ -3,6 +3,7 @@ import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../quizQuestions.js";
 import styles from "../css/Quiz.module.css";
+import RenderQuestions from "../components/RenderQuestions.jsx";
 
 const allQuestions = quizQuestions.flatMap((section) =>
   section.questions.map((q) => ({ ...q, sectionTitle: section.section }))
@@ -91,9 +92,9 @@ function Quiz() {
                         Select
                       </option>
 
-                      {question.options.map((options, idx) => (
-                        <option key={idx} value={options}>
-                          {options}
+                      {question.options.map((option, idx) => (
+                        <option key={idx} value={option}>
+                          {option}
                         </option>
                       ))}
                     </select>
@@ -150,9 +151,14 @@ function Quiz() {
           );
         })}
       </form>
-      <button className={styles.next} onClick={() => setQuestionIndex(firstSectionQuestions.length)}>
-        Next
-      </button>
+      <div className={styles.footer}>
+        <button 
+          type="button"
+          className={styles.next} 
+          onClick={() => setQuestionIndex(firstSectionQuestions.length)}>
+          Next &gt;
+        </button>
+      </div>
     </div>
   );
 
@@ -161,7 +167,11 @@ function Quiz() {
       <QuizBar currentQuestion={progressQuestionNumber} />
       <QuizTitle title={currentQuestion.sectionTitle} />
       <div className={styles.label}>{currentQuestion.label}</div>
+      <RenderQuestions/>
+        
+
       <button
+        type="button"
         onClick={() => setQuestionIndex((prev) => Math.max(prev - 1, 0))}
         disabled={questionIndex === 0}
         className={styles.previous}
@@ -169,6 +179,7 @@ function Quiz() {
         Previous
       </button>
       <button
+        type="button"
         onClick={() =>
           setQuestionIndex((prev) =>
             Math.min(prev + 1, allQuestions.length - 1)
