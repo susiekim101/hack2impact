@@ -1,11 +1,22 @@
-const quizBar = () => {
+import styles from '../css/QuizBar.module.css';
 
-    return (
-        <>
-        <h1 class="text-xl">Style Assessment</h1>
-        </>
+const QuizBar = ({currentQuestion}) => {
+  const totalQuestions = 15;
+  const circles = [];
 
-    );
-}
+  for(let i = 0; i < totalQuestions; i++) {
+      const isActive = i < currentQuestion;
+      circles.push(
+          <div key={i} 
+          className={isActive ? styles.completed : styles.remaining}/>
+      );
+  }
+  return(
+    <div className={styles.row}>
+        {circles}
+    </div>
 
-export default quizBar;
+  );
+};
+
+export default QuizBar;

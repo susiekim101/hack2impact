@@ -1,0 +1,38 @@
+.parentContainer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logoImage {
+    height:20em;
+}
+
+.button {
+    background-color: #E1C1CE;
+    font-size: 2em;
+    padding: 5px;
+    border-radius: 10px;
+    width: 40%;
+    margin: 10px;
+    border: 3px solid #E1C1CE;
+}
+
+.button:hover {
+    border: 3px solid #650909;
+}

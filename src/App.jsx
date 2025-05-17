@@ -4,9 +4,7 @@ import Home from './pages/Home.jsx'
 import Quiz from './pages/Quiz.jsx';
 import Login from './pages/Login.jsx'; 
 
-
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -15,7 +13,7 @@ function App() {
         <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
