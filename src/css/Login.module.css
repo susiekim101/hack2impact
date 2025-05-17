@@ -1,23 +1,20 @@
 body {
   display: flex;
-  justify-content: center;  
-  align-items: center;      
+  justify-content: center;        
   height: 100vh;           
   margin: 0;               
-  background-color: #f5f5f5; 
+  background-color: #F9F0E2; 
 }
 
 p {
     font-family: 'Montserrat';
+    font-weight: bold;
     font-size: 45px;
-    color: black;
+    color: #650909;
+    padding-bottom: 20px;
 }
 
 .container {
-    background-color: #E1C1CE;
-    border-radius: 50px;
-    width: 400px;
-    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,11 +22,14 @@ p {
 }
 
 .container input {
-    background-color:#D9D9D9;
+    background-color:#D5E4F4;
     font-family: 'Montserrat';
     height: 40px;
     width: 200px;
     margin-bottom: 10px;
+    border-radius: 30px;
+    align-items: center;
+    padding-left: 5px;
 }
 
 form {
@@ -39,5 +39,15 @@ form {
   align-items: center;     
 }
 
+form button {
+  padding: 10px 20px;         
+  border: 2px solid #650909;  
+  border-radius: 15px;
+  background-color: #E1C1CE;
+}
 
-
+form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
