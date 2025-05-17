@@ -1,4 +1,4 @@
-import QuizBar from '../components/quizBar.jsx';
+import QuizBar from './components/QuizBar';
 
 function Quiz() {
     return (

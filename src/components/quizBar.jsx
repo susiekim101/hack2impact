@@ -1,11 +1,10 @@
-const quizBar = () => {
+const QuizBar = (currentQuestion) => {
 
     return (
         <>
-        <h1 class="text-xl">Style Assessment</h1>
         </>
 
     );
 }
 
-export default quizBar;
+export default QuizBar;
