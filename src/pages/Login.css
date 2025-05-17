@@ -29,5 +29,15 @@ p {
     font-family: 'Montserrat';
     height: 40px;
     width: 200px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
+
+form {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;             
+  align-items: center;     
+}
+
+
+

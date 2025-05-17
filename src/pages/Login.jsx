@@ -7,12 +7,11 @@ export default function Login() {
         <div>
             <p>login</p>
         </div>
-        <div>
+        <form method="/" action="/login">
             <input type="text" placeholder="username"/>
-        </div>
-        <div>
             <input type="text" placeholder="password"/>
-        </div>
+            <button type="submit">submit</button>
+        </form>
     </div>
   );
 }
