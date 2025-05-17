@@ -1,0 +1,72 @@
+.rowGroup {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.rowItem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.columnGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.form {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.quizContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.sectionTitle{
+    font-size: 50px;
+}
+
+.label{
+    font-size: 15px;
+    width: 100%;
+}
+
+.email, .text, .date, .multiselect, .select, .textarea {
+    font-size: 12px;
+    width: 100%;
+    padding: 7px;
+    border-radius: 15px;
+    background-color: #D5E4F4;
+}
+
+.text:focus,
+.select:focus,
+.email:focus,
+.date:focus,
+.textarea:focus,
+.multiselect:focus
+{
+  outline: none;
+  border-color: #C09726;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.next {
+
+}
+
+.previous {
+
+}

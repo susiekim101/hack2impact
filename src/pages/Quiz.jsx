@@ -2,6 +2,7 @@ import { useState } from "react";
 import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../quizQuestions.js";
+import styles from "../css/Quiz.module.css";
 
 const allQuestions = quizQuestions.flatMap((section) =>
   section.questions.map((q) => ({ ...q, sectionTitle: section.section }))
@@ -14,6 +15,7 @@ const firstSectionQuestions = allQuestions.filter(
 
 function Quiz() {
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [formValues, setFormValues] = useState({});
 
   const isInFirstSection = questionIndex < firstSectionQuestions.length;
 
@@ -23,28 +25,146 @@ function Quiz() {
 
   const currentQuestion = allQuestions[questionIndex];
 
+  const handleChange = (questionId, value) => {
+    setFormValues((prev) => ({
+      ...prev,
+      [questionId]: value,
+    }));
+  };
+
+  const groupedQuestions = [];
+  let tempSmallGroup = [];
+
+  for(let i = 0; i < firstSectionQuestions.length; i++) {
+    const current = firstSectionQuestions[i];
+
+    if(current.style === "small") {
+      tempSmallGroup.push(current);
+    } else {
+      if(tempSmallGroup.length > 0) {
+        groupedQuestions.push([...tempSmallGroup]);
+        tempSmallGroup = [];
+      }
+      groupedQuestions.push([current]);
+    }
+  }
+  if(tempSmallGroup.length > 0) {
+    groupedQuestions.push([...tempSmallGroup]);
+  }
+
   const renderFirstSection = (
-    <>
-      <QuizBar currentQuestion={progressQuestionNumber} />
-      <QuizTitle title={firstSectionTitle} />
-      <h2>{firstSectionTitle}</h2>
-      {firstSectionQuestions.map((question, idx) => (
-        <p key={idx}>{question.label}</p>
-      ))}
-      <button onClick={() => setQuestionIndex(firstSectionQuestions.length)}>
+    <div className={styles.quizContainer}>
+      <div>
+        <QuizBar currentQuestion={progressQuestionNumber} />
+        <QuizTitle title={firstSectionTitle} />
+      </div>
+      <form className={styles.form}>
+        {groupedQuestions.map((group, groupIdx) => {
+          const isRow = group[0].style === "small";
+
+          return (
+            <div
+              key={groupIdx}
+              className={isRow ? styles.rowGroup : styles.columnGroup}>
+              {group.map((question, idx) => (
+                <div
+                  key={question.id}
+                  className={isRow ? styles.rowItem : undefined}
+                >
+                  <label className={styles.label}>{question.label}</label>
+                  {question.type === "text" && (
+                    <input 
+                      type="text" 
+                      className={styles.text}
+                      value={formValues[question.id]}
+                      onChange={(e) => handleChange(question.id, e.target.value)}  
+                    />
+                  )}
+
+                  {question.type === "select" && (
+                    <select 
+                      className={styles.select}
+                      value={formValues[question.id] || ""}
+                      onChange={(e) => handleChange(question.id, e.target.value)}
+                    >
+                      <option value="" disabled>
+                        Select
+                      </option>
+
+                      {question.options.map((options, idx) => (
+                        <option key={idx} value={options}>
+                          {options}
+                        </option>
+                      ))}
+                    </select>
+                  )}
+
+                  {question.type === "email" && (
+                    <input
+                      type="email"
+                      className={styles.email}
+                      value={formValues[question.id]}
+                      onChange={(e) => handleChange(question.id, e.target.value)}
+                      required
+                    />
+                  )}
+
+                  {question.type === "date" && (
+                    <input 
+                      type="date"
+                      className={styles.date}
+                      value={formValues[question.id]}
+                      onChange={(e) => handleChange(question.id, e.target.value)}
+                      required
+                    />
+                  )}
+
+                  {question.type === "multiselect" && (
+                    <select
+                      multiple
+                      className={styles.multiselect}
+                      value={formValues[question.id] || []}
+                      onChange={(e) => handleChange(
+                        question.id, 
+                        Array.from(e.target.selectedOptions, (option) => option.value))}
+                      required
+                    >
+                      {question.options.map((option, idx) => (
+                        <option key={idx} value={option}>{option}</option>))}
+                    </select>
+                  )}
+
+                  {question.type === "textarea" && (
+                    <textarea 
+                      className={styles.textarea}
+                      value={formValues[question.id] || ""}
+                      onChange={(e) => handleChange(question.id, e.target.value)}
+                      rows={4}
+                      placeholder="Type your response here..."
+                    />
+                  )}
+
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </form>
+      <button className={styles.next} onClick={() => setQuestionIndex(firstSectionQuestions.length)}>
         Next
       </button>
-    </>
+    </div>
   );
 
   const renderOtherQuestions = (
     <>
       <QuizBar currentQuestion={progressQuestionNumber} />
       <QuizTitle title={currentQuestion.sectionTitle} />
-      <p>{currentQuestion.label}</p>
+      <div className={styles.label}>{currentQuestion.label}</div>
       <button
         onClick={() => setQuestionIndex((prev) => Math.max(prev - 1, 0))}
         disabled={questionIndex === 0}
+        className={styles.previous}
       >
         Previous
       </button>
@@ -65,3 +185,4 @@ function Quiz() {
 }
 
 export default Quiz;
+// email, date, multiselect, textarea
