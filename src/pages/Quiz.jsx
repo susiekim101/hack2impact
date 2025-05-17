@@ -4,8 +4,8 @@ import QuizTitle from "../components/QuizTitle.jsx";
 function Quiz() {
   return (
     <>
-      <QuizBar currentQuestion={3}/>
-      <QuizTitle title="Color Preferences"/>
+      <QuizBar currentQuestion={3} />
+      <QuizTitle title="Color Preferences" />
     </>
   );
 }
