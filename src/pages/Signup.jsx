@@ -13,31 +13,31 @@ export default function Signup() {
   const [submitError, setSubmitError] = useState("");
 
   const handleSignup = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  setEmailError("");
-  setPasswordError("");
-  setSubmitError("");
+    setEmailError("");
+    setPasswordError("");
+    setSubmitError("");
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let valid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valid = true;
 
-  if (!emailRegex.test(email)) {
-    setEmailError("Please enter a valid email address.");
-    valid = false;
-  }
+    if (!emailRegex.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      valid = false;
+    }
 
-  if (password.length < 6) {
-    setPasswordError("Password must be at least 6 characters.");
-    valid = false;
-  }
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters.");
+      valid = false;
+    }
 
-  if (!valid) return;
+    if (!valid) return;
 
     try {
       const user = await signup(email, password);
       console.log("User signed up:", user);
-      setError(""); 
+      setError("");
       navigate("/quiz");
     } catch (error) {
       setError("Sign up failed. Please check your credentials.");
@@ -67,9 +67,9 @@ export default function Signup() {
           placeholder="Email"
           value={email}
           onChange={(e) => {
-            setEmail(e.target.value)
-            setEmailError("")
-        }}
+            setEmail(e.target.value);
+            setEmailError("");
+          }}
           required
         />
         {emailError && <p className={styles.errorText}>{emailError}</p>}
@@ -78,17 +78,21 @@ export default function Signup() {
           placeholder="Password"
           value={password}
           onChange={(e) => {
-            setPassword(e.target.value)
-            setPasswordError("")
+            setPassword(e.target.value);
+            setPasswordError("");
           }}
           required
         />
         {passwordError && <p className={styles.errorText}>{passwordError}</p>}
         <button type="submit">Submit</button>
       </form>
-      <button onClick={handleGoogleSignup} className={styles.googleButton}>Sign up with Google</button>
+      <button onClick={handleGoogleSignup} className={styles.googleButton}>
+        Sign up with Google
+      </button>
       {error && <p className={styles.errorText}>{error}</p>}
-      <Link to="/login" className={styles.link}>Already have an account? Log in</Link>
+      <Link to="/login" className={styles.link}>
+        Already have an account? Log in
+      </Link>
     </div>
   );
 }

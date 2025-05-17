@@ -1,5 +1,11 @@
-import {GoogleGenAI} from '@google/genai';
+import { GoogleGenAI, Modality } from "@google/genai";
+import path from "path";
+import process from "process";
+import dotenv from "dotenv";
 
-const genAI = new GoogleGenAI({apiKEY: process.env.API_KEY});
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
 
+console.log("API Key:", process.env.API_KEY);
+
+const genAI = new GoogleGenAI({ apiKey: process.env.API_KEY });
 export default genAI;

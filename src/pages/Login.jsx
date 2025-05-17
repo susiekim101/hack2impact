@@ -90,7 +90,9 @@ export default function Login() {
       </form>
       <button onClick={handleGoogleLogin} className={styles.googleButton}>Log in with Google</button>
       {error && <p className={styles.errorText}>{error}</p>}
-      <Link to="/signup" className={styles.link}>Don't have an account? Sign up</Link>
+      <Link to="/signup" className={styles.link}>
+        Don't have an account? Sign up
+      </Link>
     </div>
   );
 }
