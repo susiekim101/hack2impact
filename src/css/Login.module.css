@@ -9,9 +9,9 @@ body {
 p {
     font-family: 'Montserrat';
     font-weight: bold;
-    font-size: 45px;
+    font-size: 6vh;
     color: #650909;
-    padding-bottom: 20px;
+    padding-bottom: 2vh;
 }
 
 .container {
@@ -24,30 +24,55 @@ p {
 .container input {
     background-color:#D5E4F4;
     font-family: 'Montserrat';
-    height: 40px;
-    width: 200px;
-    margin-bottom: 10px;
-    border-radius: 30px;
+    height: 7vh;
+    width: 35vw;
+    margin-bottom: 1.5vh;
+    border-radius: 5vh;
     align-items: center;
-    padding-left: 5px;
+    padding-left: 1vw;
+    cursor: pointer;
 }
 
 form {
   display: flex;
   flex-direction: column; 
-  gap: 15px;             
-  align-items: center;     
+  gap: 2vh;             
+  align-items: center;   
+  margin-bottom: 4vh;  
 }
 
-form button {
-  padding: 10px 20px;         
-  border: 2px solid #650909;  
-  border-radius: 15px;
+button {
+  width: 13vw;         
+  padding: 1.5vh 0;        
+  border: 0.3vh solid #650909;  
+  border-radius: 2vh;
   background-color: #E1C1CE;
+  margin-bottom: 3vhx;
+  cursor: pointer;
 }
 
 form label {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+}
+
+.errorText {
+  font-family: 'Montserrat';
+  font-size: large;
+  color: red;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.link {
+  color: #650909;
+  font-family: 'Montserrat';
+  font-size: 2vh;
+  margin-top: 3vh;
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: #240303;
 }
