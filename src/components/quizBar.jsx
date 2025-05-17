@@ -1,10 +1,5 @@
 const QuizBar = (currentQuestion) => {
-
-    return (
-        <>
-        </>
-
-    );
-}
+  return <></>;
+};
 
 export default QuizBar;

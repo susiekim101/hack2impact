@@ -1,11 +1,11 @@
-import QuizBar from '../components/QuizBar';
+import QuizBar from "./components/QuizBar";
 
 function Quiz() {
-    return (
-        <>
-        <QuizBar/>
-        </>
-    );
+  return (
+    <>
+      <QuizBar />
+    </>
+  );
 }
 
 export default Quiz;
