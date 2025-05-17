@@ -1,6 +1,6 @@
 const questions = [
   {
-    section: "Section 0: Basic Information",
+    section: "Basic Information",
     questions: [
       { id: "firstName", type: "text", label: "First Name" },
       { id: "lastName", type: "text", label: "Last Name" },
@@ -43,7 +43,7 @@ const questions = [
   },
 
   {
-    section: "Section 1: Color/Texture/Scent Preferences",
+    section: "Preferences",
     questions: [
       {
         id: "colorPalettes",
@@ -170,7 +170,7 @@ const questions = [
   },
 
   {
-    section: "Section 2: Sensory Triggers",
+    section: "Sensory Triggers",
     questions: [
       {
         id: "sensoryTriggers",
@@ -194,7 +194,7 @@ const questions = [
   },
 
   {
-    section: "Section 3: Layout & Safety",
+    section: "Layout & Safety",
     questions: [
       {
         id: "layoutSafety",
@@ -247,7 +247,7 @@ const questions = [
   },
 
   {
-    section: "Section 4: Furniture & Decor Preferences",
+    section: "Furniture & Decor Preferences",
     questions: [
       {
         id: "furnitureStyle",

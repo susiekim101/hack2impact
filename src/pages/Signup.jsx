@@ -58,7 +58,7 @@ export default function Signup() {
         <button type="submit">Submit</button>
       </form>
       <button onClick={handleGoogleSignup}>Sign up with Google</button>
-      {error && <p tyle={{ color: "red" }}>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
       <Link to="/login">Already have an account? Log in</Link>
     </div>
   );
