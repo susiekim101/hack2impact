@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAuth } from "firebase/auth";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -11,11 +12,10 @@ const firebaseConfig = {
   authDomain: "hack2impact-69417.firebaseapp.com",
   projectId: "hack2impact-69417",
   storageBucket: "hack2impact-69417.firebasestorage.app",
-  messagingSenderId: "54015197809",
   appId: "1:54015197809:web:995c75057abbf0eeded1d0",
-  measurementId: "G-NYD87NMXQK"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const auth = getAuth(app);
+export { auth };
