@@ -5,6 +5,10 @@ import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
 import Nav from "../components/NavigationButton.jsx";
 import { useNavigate } from "react-router-dom";
+import { auth, db } from "../firebase/config";
+import { doc, setDoc } from "firebase/firestore";
+
+const user = auth.currentUser;
 
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
@@ -23,12 +27,12 @@ import Question15 from "../components/questions/Question15.jsx";
 import Question16 from "../components/questions/Question16.jsx";
 import Question17 from "../components/questions/Question17.jsx";
 
-import chair from "../assets/icons/chair.png"
-import lamp1 from "../assets/icons/lamp1.png"
-import lamp2 from "../assets/icons/lamp2.png"
-import lamp3 from "../assets/icons/lamp3.png"
-import plant from "../assets/icons/plant.png"
-import sofa from "../assets/icons/sofa.png"
+import chair from "../assets/icons/chair.png";
+import lamp1 from "../assets/icons/lamp1.png";
+import lamp2 from "../assets/icons/lamp2.png";
+import lamp3 from "../assets/icons/lamp3.png";
+import plant from "../assets/icons/plant.png";
+import sofa from "../assets/icons/sofa.png";
 
 export const questionComponents = {
   colorPalettes: Question2,
@@ -58,6 +62,21 @@ const firstSectionQuestions = allQuestions.filter(
   (q) => q.sectionTitle === firstSectionTitle
 );
 
+const saveFormToFirestore = async (results) => {
+  if (!auth.currentUser) return;
+
+  const userId = auth.currentUser.uid;
+  try {
+    await setDoc(doc(db, "form", userId), {
+      results,
+      timestamp: new Date(),
+    });
+    console.log("form saved");
+  } catch (error) {
+    console.error("error saving form:", error);
+  }
+};
+
 function Quiz() {
   const navigate = useNavigate();
   const [questionIndex, setQuestionIndex] = useState(0);
@@ -81,6 +100,7 @@ function Quiz() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Submitting form values:", formValues);
+    saveFormToFirestore(formValues);
     navigate("/results", { state: { quizData: formValues } });
   };
 
@@ -92,8 +112,16 @@ function Quiz() {
 
     return (
       <div className="relative w-screen">
-        <img src={chair} alt="chair icon" className="absolute top-20 left-10 rotate-[-15deg] w-16 opacity-80"/>
-        <img src={sofa} alt="sofa icon" className="absolute bottom-20 right-30 rotate-[10deg] w-12 opacity-80"/>
+        <img
+          src={chair}
+          alt="chair icon"
+          className="absolute top-20 left-10 rotate-[-15deg] w-16 opacity-80"
+        />
+        <img
+          src={sofa}
+          alt="sofa icon"
+          className="absolute bottom-20 right-30 rotate-[10deg] w-12 opacity-80"
+        />
         <form onSubmit={handleSubmit}>
           <QuizBar currentQuestion={progressQuestionNumber} />
           <QuizTitle title={currentQuestion.sectionTitle} />
