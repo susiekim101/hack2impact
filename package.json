@@ -17,6 +17,7 @@
     "firebase": "^11.7.3",
     "fs": "^0.0.1-security",
     "node": "^20.19.2",
+    "prop-types": "^15.8.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.6.0"
