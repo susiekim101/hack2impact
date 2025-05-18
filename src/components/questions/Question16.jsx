@@ -1,51 +1,37 @@
 import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/questions/Question4.module.css";
+import styles from "../../css/questions/Question12.module.css";
 
 const Question16 = ({ formValues, setFormValues }) => {
   const questionId = "wallDecor";
   const selected = formValues[questionId] || [];
   const options = quizQuestions[4].questions[4].options;
 
-  const toggleSelection = (optionValue) => {
-    setFormValues((prev) => {
-      const currentSelected = prev[questionId] || [];
-      const isSelected = currentSelected.includes(optionValue);
-
-      if (!isSelected && currentSelected.length >= 3) {
-        return prev;
-      }
-
-      const updated = isSelected
-        ? currentSelected.filter((val) => val !== optionValue)
-        : [...currentSelected, optionValue];
-
-      const newFormValues = {
-        ...prev,
-        [questionId]: updated,
-      };
-
-      console.log("updating formvalues: ", newFormValues);
-      return newFormValues;
-    });
+  const handleSelect = (optionValue) => {
+    setFormValues((prev) => ({
+      ...prev,
+      [questionId]: optionValue,
+    }));
+    console.log("updating formvalues: ", formValues);
   };
 
   return (
     <>
-      <p className={styles.caption}>Select up to three.</p>
-      <div className={styles.answerContainer}>
-        <div className={styles.multipleChoice}>
-          {options.map((opt, idx) => (
+      <div className={styles.grid}>
+        {options.map((opt, idx) => (
+          <div
+            key={idx}
+            className={`${styles.imageBorder} ${
+              selected.includes(opt.label) ? styles.selected : ""
+            }`}
+          >
             <div
-              key={idx}
-              className={`${styles.option} ${
-                selected.includes(opt) ? styles.selected : ""
-              }`}
-              onClick={() => toggleSelection(opt)}
+              className={styles.option}
+              onClick={() => handleSelect(opt.label)}
             >
-              {opt}
+              <img src={opt.image} alt={opt.label} className={styles.image} />
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </>
   );

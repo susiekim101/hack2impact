@@ -397,9 +397,6 @@ const questions = [
             label: "Plants or nature elements",
             image: plants,
           },
-          {
-            label: "None / I prefer not to include these",
-          },
         ],
       },
       {
@@ -426,9 +423,6 @@ const questions = [
           {
             label: "Colorful, expressive art (abstract, cultural, or handmade)",
             image: colorfulWall,
-          },
-          {
-            label: "I’m not sure",
           },
         ],
       },
