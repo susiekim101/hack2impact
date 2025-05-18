@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
+import CloverSvg from '../assets/svg/clover.svg';
+import BottomWave from '../assets/svg/wave.svg';
+import styles from "../css/Results.module.css";
 
 const tempImages = [
   "https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -62,57 +65,54 @@ const Results = () => {
   return (
     <div>
       <div>
-        <h2>Your Design Personality</h2>
-        <p>{summary.title}</p>
-        <p>{summary.description}</p>
+        <h2 className={styles.heading}>Your Design Personality</h2>
+        <div className={styles.svgWrapper}>
+          <img src={CloverSvg} alt="Clover" className={styles.clover} />
+          <div className={styles.svgOverlay}>
+            <p className={styles.cloverText}>{summary.title}</p>
+            <p className={styles.cloverText}>{summary.description}</p>
+          </div>
+        </div>
       </div>
 
-      {/*temporary hardcoded images*/}
+      {/* Temporary hardcoded images */}
       <div>
-        <h3>Design Inspirations</h3>
-        {tempImages.map((url, index) => {
-          const key = captionKeys[index];
-          return (
-            <div key={index}>
-              <img src={url} alt={`Design ${key}`} />
-              <p>{captions[key] || "Loading caption..."}</p>
-            </div>
-          );
-        })}
+        <h3 className={styles.heading}>Design Inspirations</h3>
+        <div className={styles.imageRow}>
+          {tempImages.map((url, index) => {
+            const key = captionKeys[index];
+            return (
+              <div key={index} className={styles.imageContainer}>
+                <img className={styles.image} src={url} alt={`Design ${key}`} />
+                <p>{captions[key] || "Loading caption..."}</p>
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      {/*reimplement with tokens*/}
-      {/*}
-      <div>
-        {images.map((image, index) => {
-          const keys = ["interiorDesign", "colorPalette", "furnitureDesign"];
-          const key = keys[index] || `image${index + 1}`;
-          return (
-            <div key={index}>
-              <img src={image} alt={`Generated ${key}`} />
-              <p>{captions[key]}</p>
-            </div>
-          );
-        })}
-        */}
+      {/* Wave section with recommended and avoid lists */}
+      <div className={styles.waveSection}>
+        <img src={BottomWave} alt="Wave bottom" className={styles.wave} />
+        <div className={styles.waveContent}>
+          <div>
+            <h3>Recommended Elements</h3>
+            <ul>
+              {toInclude.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
 
-      <div>
-        <h3>Recommended Elements</h3>
-        <ul>
-          {toInclude.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
-
-        <h3>Things to Avoid</h3>
-        <ul>
-          {toAvoid.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </ul>
+            <h3>Things to Avoid</h3>
+            <ul>
+              {toAvoid.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
-
 export default Results;
