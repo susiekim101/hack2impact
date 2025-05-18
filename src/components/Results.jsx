@@ -99,14 +99,18 @@ const Results = () => {
           <h3 className={styles.waveHeading}>Recommended Elements</h3>
           <ul>
             {toInclude.map((item, idx) => (
-              <li className={styles.waveText} key={idx}>{item}</li>
+              <li className={styles.waveText} key={idx}>
+                {item}
+              </li>
             ))}
           </ul>
-            <br />
+          <br />
           <h3 className={styles.waveHeading}>Things to Avoid</h3>
           <ul>
             {toAvoid.map((item, idx) => (
-              <li className={styles.waveText}  key={idx}>{item}</li>
+              <li className={styles.waveText} key={idx}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>

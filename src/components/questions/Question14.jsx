@@ -16,6 +16,7 @@ const Question14 = ({ formValues, setFormValues }) => {
 
   return (
     <>
+    <p className={styles.caption}>(Click 'Next' to skip)</p>
       <div className={styles.grid}>
         {options.map((opt, idx) => (
           <div

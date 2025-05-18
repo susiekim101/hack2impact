@@ -23,6 +23,13 @@ import Question15 from "../components/questions/Question15.jsx";
 import Question16 from "../components/questions/Question16.jsx";
 import Question17 from "../components/questions/Question17.jsx";
 
+import chair from "../assets/icons/chair.png"
+import lamp1 from "../assets/icons/lamp1.png"
+import lamp2 from "../assets/icons/lamp2.png"
+import lamp3 from "../assets/icons/lamp3.png"
+import plant from "../assets/icons/plant.png"
+import sofa from "../assets/icons/sofa.png"
+
 export const questionComponents = {
   colorPalettes: Question2,
   textures: Question3,
@@ -84,7 +91,9 @@ function Quiz() {
     const QuestionComponent = questionComponents[currentQuestion.id];
 
     return (
-      <>
+      <div className="relative w-screen">
+        <img src={chair} alt="chair icon" className="absolute top-20 left-10 rotate-[-15deg] w-16 opacity-80"/>
+        <img src={sofa} alt="sofa icon" className="absolute bottom-20 right-30 rotate-[10deg] w-12 opacity-80"/>
         <form onSubmit={handleSubmit}>
           <QuizBar currentQuestion={progressQuestionNumber} />
           <QuizTitle title={currentQuestion.sectionTitle} />
@@ -110,7 +119,7 @@ function Quiz() {
             />
           )}
         </form>
-      </>
+      </div>
     );
   })();
 

@@ -15,6 +15,8 @@ const Question11 = ({ formValues, setFormValues }) => {
   };
 
   return (
+    <>
+    
     <div className={styles.answerContainer}>
       <div className={styles.multipleChoice}>
         {options.map((opt, idx) => (
@@ -30,6 +32,7 @@ const Question11 = ({ formValues, setFormValues }) => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 
