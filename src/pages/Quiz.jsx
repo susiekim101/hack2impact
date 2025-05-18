@@ -3,7 +3,8 @@ import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../quizQuestions.js";
 import styles from "../css/Quiz.module.css";
-import RenderQuestions from "../components/RenderQuestions.jsx";
+import Question2 from "../components/Question2.jsx";
+import Nav from "../components/NavigationButton.jsx";
 
 const allQuestions = quizQuestions.flatMap((section) =>
   section.questions.map((q) => ({ ...q, sectionTitle: section.section }))
@@ -54,6 +55,7 @@ function Quiz() {
   }
 
   const renderFirstSection = (
+    <div className={styles.wrapper}>
     <div className={styles.quizContainer}>
       <div>
         <QuizBar currentQuestion={progressQuestionNumber} />
@@ -160,6 +162,7 @@ function Quiz() {
         </button>
       </div>
     </div>
+    </div>
   );
 
   const renderOtherQuestions = (
@@ -167,28 +170,14 @@ function Quiz() {
       <QuizBar currentQuestion={progressQuestionNumber} />
       <QuizTitle title={currentQuestion.sectionTitle} />
       <div className={styles.label}>{currentQuestion.label}</div>
-      <RenderQuestions/>
-        
+      
+      <Question2 formValues={formValues} setFormValues={setFormValues}/>
+      <Nav
+        index={questionIndex}
+        setIndex={setQuestionIndex}
+        total={allQuestions.length}
+      />
 
-      <button
-        type="button"
-        onClick={() => setQuestionIndex((prev) => Math.max(prev - 1, 0))}
-        disabled={questionIndex === 0}
-        className={styles.previous}
-      >
-        Previous
-      </button>
-      <button
-        type="button"
-        onClick={() =>
-          setQuestionIndex((prev) =>
-            Math.min(prev + 1, allQuestions.length - 1)
-          )
-        }
-        disabled={questionIndex === allQuestions.length - 1}
-      >
-        Next
-      </button>
     </>
   );
 

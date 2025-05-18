@@ -1,0 +1,54 @@
+import quizQuestions from "../quizQuestions.js";
+import styles from "../css/Question2.module.css";
+
+const Question2 = ({formValues, setFormValues}) => {
+    const questionId = "colorPalettes"
+    const selected = formValues[questionId] || [];
+    const options = quizQuestions[1].questions[0].options;
+
+    const toggleSelection = (optionValue) => {
+        setFormValues( (prev) => {
+            const selected = prev[questionId] || [];
+            const isSelected = selected.includes(optionValue);
+            let updated;
+
+            if(isSelected) {
+                updated = selected.filter((val) => val != optionValue);
+            } else {
+                if (selected.length >= 3) return;
+                updated = [...selected, optionValue];
+            }
+
+            const newFormValues = {
+                ...prev,
+                [questionId]: updated,
+            };
+
+            console.log("updating formvalues: ", newFormValues);
+            return newFormValues;
+        });
+    };
+
+    return (
+        <>
+        <p className={styles.caption}>
+            Select up to three.
+        </p>
+
+        <div className={styles.grid}>
+            {options.map((opt, idx) => (
+                <div key={idx} className={`${styles.imageBorder} ${selected.includes(opt.label) ? styles.selected : ''}`}>
+                    <div
+                        className={styles.option}
+                        onClick={() => toggleSelection(opt.label)}
+                    >
+                        <img src={opt.image} alt={opt.label} className={styles.image}/>
+                    </div>
+                </div>
+            ))}
+        </div>
+        </>
+    );
+};
+
+export default Question2;

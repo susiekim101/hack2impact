@@ -1,3 +1,14 @@
+import babypastel from "./assets/colorPalettes/babypastel.png";
+import earthy1 from "./assets/colorPalettes/earthy1.png";
+import earthy2 from "./assets/colorPalettes/earthy2.png";
+import forest from "./assets/colorPalettes/forest.png";
+import monogray from "./assets/colorPalettes/monochromaticgray.png";
+import monoslate from "./assets/colorPalettes/monochromaticslate.png";
+import monobrown from "./assets/colorPalettes/monochromebrown.png";
+import ocean1 from "./assets/colorPalettes/ocean1.png";
+import ocean2 from "./assets/colorPalettes/ocean2.png";
+import peachy from "./assets/colorPalettes/peachypastel.png";
+
 const questions = [
   {
     section: "Basic Information",
@@ -39,30 +50,42 @@ const questions = [
         label: "Which color palettes make you feel most at ease?",
         options: [
           {
-            label: "Earthy Neutrals",
-            image: "FILL IN",
+            label: "Baby pastel pink and blue",
+            image: babypastel,
           },
           {
-            label: "Ocean Blues & Greens",
-            image: "FILL IN",
+            label: "Pastel earthy brown and green",
+            image: earthy1,
           },
           {
-            label: "Forest Greens & Browns",
-            image: "FILL IN",
-          },
-          { 
-            label: "Pastels", 
-            image: "FILL IN" },
-          {
-            label: "Monochromatic Tones",
-            image: "FILL IN",
+            label: "Earthy brown and green",
+            image: earthy2,
           },
           { 
-            label: "Rich/Dark Colors", 
-            image: "FILL IN" },
+            label: "Forest green and dirt brown", 
+            image: forest },
           {
-            label: "Light & Airy Colors",
-            image: "FILL IN",
+            label: "Monochromatic shades of gray",
+            image: monogray,
+          },
+          { 
+            label: "Monochromatic shades of slate blue", 
+            image: monoslate },
+          {
+            label: "Monochromatic shades of brown",
+            image: monobrown,
+          },
+          {
+            label: "Light ocean blue",
+            image: ocean1,
+          },
+          {
+            label: "Bright ocean blues and green",
+            image: ocean2,
+          },
+          {
+            label: "Pink and orange pastel ",
+            image: peachy,
           },
         ],
       },
