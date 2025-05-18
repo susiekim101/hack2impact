@@ -112,13 +112,34 @@ const questions = [
         type: "multiselect",
         label: "Which textures make you feel most comfortable?",
         options: [
-          "Plush / Velvet",
-          "Smooth Cotton or Linen",
-          "Microfiber",
-          "Fleece or Sherpa",
-          "Natural Wood",
-          "Smooth Stone or Tile",
-          "Soft Woven Materials",
+          {
+            label: "cotton",
+            image: cotton,
+          },
+          { 
+            label: "fleece", 
+            image: fleece 
+          },
+          {
+            label: "microfiber",
+            image: microfiber,
+          },
+          {
+            label: "stone",
+            image: stone,
+          },
+          {
+            label: "velvet",
+            image: velvet,
+          },
+          {
+            label: "wood",
+            image: wood,
+          },
+          {
+            label: "woven",
+            image: woven,
+          },
         ],
       },
       {
