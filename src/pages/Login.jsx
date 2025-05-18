@@ -15,24 +15,24 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-  setEmailError("");
-  setPasswordError("");
-  setSubmitError("");
+    setEmailError("");
+    setPasswordError("");
+    setSubmitError("");
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  let valid = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let valid = true;
 
-  if (!emailRegex.test(email)) {
-    setEmailError("Please enter a valid email address.");
-    valid = false;
-  }
+    if (!emailRegex.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      valid = false;
+    }
 
-  if (password.length < 6) {
-    setPasswordError("Password must be at least 6 characters.");
-    valid = false;
-  }
+    if (password.length < 6) {
+      setPasswordError("Password must be at least 6 characters.");
+      valid = false;
+    }
 
-  if (!valid) return;
+    if (!valid) return;
 
     try {
       const user = await login(email, password);
@@ -43,17 +43,6 @@ export default function Login() {
     } catch (error) {
       setError("Login failed. Please check your credentials.");
       console.error("Error logging in:", error);
-    }
-  };
-
-  const handleGoogleLogin = async () => {
-    try {
-      const user = await loginWithGoogle();
-      console.log("User logged in with Google:", user);
-      // Redirect or perform any other action after successful login
-    } catch (error) {
-      setError("Login failed. Please try again.");
-      console.error("Error logging in with Google:", error);
     }
   };
 
@@ -69,8 +58,8 @@ export default function Login() {
           placeholder="Email"
           value={email}
           onChange={(e) => {
-            setEmail(e.target.value)
-            setEmailError("")
+            setEmail(e.target.value);
+            setEmailError("");
           }}
           required
         />
@@ -80,15 +69,17 @@ export default function Login() {
           placeholder="Password"
           value={password}
           onChange={(e) => {
-            setPassword(e.target.value)
-            setPasswordError("")
+            setPassword(e.target.value);
+            setPasswordError("");
           }}
           required
         />
         {passwordError && <p className={styles.errorText}>{passwordError}</p>}
-        <button type="submit" className={styles.button}>Submit</button>
+        <button type="submit" className={styles.button}>
+          Log In
+        </button>
       </form>
-      <button onClick={handleGoogleLogin} className={styles.googleButton}>Log in with Google</button>
+
       {error && <p className={styles.errorText}>{error}</p>}
       <Link to="/signup" className={styles.link}>
         Don't have an account? Sign up

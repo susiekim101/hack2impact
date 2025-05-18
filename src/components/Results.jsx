@@ -4,11 +4,13 @@ import { useLocation } from "react-router-dom";
 import CloverSvg from '../assets/svg/clover.svg';
 import styles from "../css/Results.module.css";
 
+/*
 const tempImages = [
   "https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://images.unsplash.com/photo-1608556984739-26328c578559?q=80&w=627&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   "https://plus.unsplash.com/premium_photo-1670076513880-f58e3c377903?q=80&w=1436&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
+*/
 
 const captionKeys = ["interiorDesign", "colorPalette", "furnitureDesign"];
 
@@ -19,7 +21,7 @@ const Results = () => {
   console.log(quizData);
 
   const [summary, setSummary] = useState({ title: "", description: "" });
-  //const [images, setImages] = useState([]);
+  const [images, setImages] = useState([]);
   const [captions, setCaptions] = useState({});
   const [toInclude, setToInclude] = useState([]);
   const [toAvoid, setToAvoid] = useState([]);
@@ -45,7 +47,7 @@ const Results = () => {
           title: parsed.titleParagraph || "",
           description: parsed.descriptionSummary || "",
         });
-        // setImages(parsed.images || []);
+        setImages(result.images || []);
         setCaptions(parsed.imageCaptions || {});
         setToInclude(parsed.toInclude || []);
         setToAvoid(parsed.toAvoid || []);
@@ -74,11 +76,10 @@ const Results = () => {
         </div>
       </div>
 
-      {/* Temporary hardcoded images */}
       <div>
         <h3 className={styles.heading}>Design Inspirations</h3>
         <div className={styles.imageRow}>
-          {tempImages.map((url, index) => {
+          {images.map((url, index) => {
             const key = captionKeys[index];
             return (
               <div key={index} className={styles.imageContainer}>
@@ -111,4 +112,5 @@ const Results = () => {
     </div>
   );
 };
+
 export default Results;

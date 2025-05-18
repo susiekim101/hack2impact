@@ -1,12 +1,6 @@
-body {
-   height: auto;
-}
-
-
 .image {
    border: 2vh solid transparent;
 }
-
 
 .imageRow {
    display: flex;
@@ -23,23 +17,19 @@ body {
    padding-top: 2vh;
 }
 
-
 .imageContainer {
    flex: 1 1 30%;
    max-width: 30%;
    text-align: center;
 }
 
-
 .imageContainer:nth-child(1) .image {
    border-color: #DAB3C1;
 }
 
-
 .imageContainer:nth-child(2) .image {
    border-color: #C1CDB5;
 }
-
 
 .imageContainer:nth-child(3) .image {
    border-color: #C3DCD8;
@@ -56,14 +46,12 @@ body {
    height: auto;
 }
 
-
 .clover {
    width: 100%;
    height: auto;
    display: block;
    transform: scale(1);
 }
-
 
 .svgOverlay {
    position: absolute;
