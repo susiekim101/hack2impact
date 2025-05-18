@@ -57,132 +57,132 @@ function Quiz() {
 
   const renderFirstSection = (
     <div className={styles.wrapper}>
-    <div className={styles.quizContainer}>
-      <div>
-        <QuizBar currentQuestion={progressQuestionNumber} />
-        <QuizTitle title={firstSectionTitle} />
-      </div>
-      <form className={styles.form}>
-        {groupedQuestions.map((group, groupIdx) => {
-          const isRow = group[0].style === "small";
+      <div className={styles.quizContainer}>
+        <div>
+          <QuizBar currentQuestion={progressQuestionNumber} />
+          <QuizTitle title={firstSectionTitle} />
+        </div>
+        <form className={styles.form}>
+          {groupedQuestions.map((group, groupIdx) => {
+            const isRow = group[0].style === "small";
 
-          return (
-            <div
-              key={groupIdx}
-              className={isRow ? styles.rowGroup : styles.columnGroup}
-            >
-              {group.map((question, idx) => (
-                <div
-                  key={question.id}
-                  className={isRow ? styles.rowItem : undefined}
-                >
-                  <label className={styles.label}>{question.label}</label>
-                  {question.type === "text" && (
-                    <input
-                      type="text"
-                      className={styles.text}
-                      value={formValues[question.id]}
-                      onChange={(e) =>
-                        handleChange(question.id, e.target.value)
-                      }
-                    />
-                  )}
+            return (
+              <div
+                key={groupIdx}
+                className={isRow ? styles.rowGroup : styles.columnGroup}
+              >
+                {group.map((question, idx) => (
+                  <div
+                    key={question.id}
+                    className={isRow ? styles.rowItem : undefined}
+                  >
+                    <label className={styles.label}>{question.label}</label>
+                    {question.type === "text" && (
+                      <input
+                        type="text"
+                        className={styles.text}
+                        value={formValues[question.id]}
+                        onChange={(e) =>
+                          handleChange(question.id, e.target.value)
+                        }
+                      />
+                    )}
 
-                  {question.type === "select" && (
-                    <select
-                      className={styles.select}
-                      value={formValues[question.id] || ""}
-                      onChange={(e) =>
-                        handleChange(question.id, e.target.value)
-                      }
-                    >
-                      <option value="" disabled>
-                        Select
-                      </option>
-
-                      {question.options.map((option, idx) => (
-                        <option key={idx} value={option}>
-                          {option}
+                    {question.type === "select" && (
+                      <select
+                        className={styles.select}
+                        value={formValues[question.id] || ""}
+                        onChange={(e) =>
+                          handleChange(question.id, e.target.value)
+                        }
+                      >
+                        <option value="" disabled>
+                          Select
                         </option>
-                      ))}
-                    </select>
-                  )}
 
-                  {question.type === "email" && (
-                    <input
-                      type="email"
-                      className={styles.email}
-                      value={formValues[question.id]}
-                      onChange={(e) =>
-                        handleChange(question.id, e.target.value)
-                      }
-                      required
-                    />
-                  )}
+                        {question.options.map((option, idx) => (
+                          <option key={idx} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
 
-                  {question.type === "date" && (
-                    <input
-                      type="date"
-                      className={styles.date}
-                      value={formValues[question.id]}
-                      onChange={(e) =>
-                        handleChange(question.id, e.target.value)
-                      }
-                      required
-                    />
-                  )}
+                    {question.type === "email" && (
+                      <input
+                        type="email"
+                        className={styles.email}
+                        value={formValues[question.id]}
+                        onChange={(e) =>
+                          handleChange(question.id, e.target.value)
+                        }
+                        required
+                      />
+                    )}
 
-                  {question.type === "multiselect" && (
-                    <select
-                      multiple
-                      className={styles.multiselect}
-                      value={formValues[question.id] || []}
-                      onChange={(e) =>
-                        handleChange(
-                          question.id,
-                          Array.from(
-                            e.target.selectedOptions,
-                            (option) => option.value
+                    {question.type === "date" && (
+                      <input
+                        type="date"
+                        className={styles.date}
+                        value={formValues[question.id]}
+                        onChange={(e) =>
+                          handleChange(question.id, e.target.value)
+                        }
+                        required
+                      />
+                    )}
+
+                    {question.type === "multiselect" && (
+                      <select
+                        multiple
+                        className={styles.multiselect}
+                        value={formValues[question.id] || []}
+                        onChange={(e) =>
+                          handleChange(
+                            question.id,
+                            Array.from(
+                              e.target.selectedOptions,
+                              (option) => option.value
+                            )
                           )
-                        )
-                      }
-                      required
-                    >
-                      {question.options.map((option, idx) => (
-                        <option key={idx} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  )}
+                        }
+                        required
+                      >
+                        {question.options.map((option, idx) => (
+                          <option key={idx} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                    )}
 
-                  {question.type === "textarea" && (
-                    <textarea
-                      className={styles.textarea}
-                      value={formValues[question.id] || ""}
-                      onChange={(e) =>
-                        handleChange(question.id, e.target.value)
-                      }
-                      rows={4}
-                      placeholder="Type your response here..."
-                    />
-                  )}
-                </div>
-              ))}
-            </div>
-          );
-        })}
-      </form>
-      <div className={styles.footer}>
-        <button
-          type="button"
-          className={styles.next}
-          onClick={() => setQuestionIndex(firstSectionQuestions.length)}
-        >
-          Next &gt;
-        </button>
+                    {question.type === "textarea" && (
+                      <textarea
+                        className={styles.textarea}
+                        value={formValues[question.id] || ""}
+                        onChange={(e) =>
+                          handleChange(question.id, e.target.value)
+                        }
+                        rows={4}
+                        placeholder="Type your response here..."
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </form>
+        <div className={styles.footer}>
+          <button
+            type="button"
+            className={styles.next}
+            onClick={() => setQuestionIndex(firstSectionQuestions.length)}
+          >
+            Next &gt;
+          </button>
+        </div>
       </div>
-    </div>
     </div>
   );
 
@@ -191,14 +191,13 @@ function Quiz() {
       <QuizBar currentQuestion={progressQuestionNumber} />
       <QuizTitle title={currentQuestion.sectionTitle} />
       <div className={styles.label}>{currentQuestion.label}</div>
-      
-      <Question3 formValues={formValues} setFormValues={setFormValues}/>
+
+      <Question2 formValues={formValues} setFormValues={setFormValues} />
       <Nav
         index={questionIndex}
         setIndex={setQuestionIndex}
         total={allQuestions.length}
       />
-
     </>
   );
 
