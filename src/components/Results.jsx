@@ -111,7 +111,7 @@ const Results = () => {
   return (
     <div>
       <div>
-        <h2 className={styles.heading}>Your Design Personality</h2>
+        <h2 className={styles.heading}>🛋️ Your Design Personality 🪴</h2>
         <div className={styles.svgWrapper}>
           <img src={CloverSvg} alt="Clover" className={styles.clover} />
           <div className={styles.svgOverlay}>
