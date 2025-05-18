@@ -150,7 +150,7 @@ const questions = [
         ],
       },
       {
-        id: "preferreScent",
+        id: "preferredScent",
         type: "multiselect",
         label: "Which scents help you feel calm or at home?",
         options: [ "Woody 🪵", "Earthy 🌎", "Herbal 🌿", "Gentle Citrus 🍊", "Fresh Linen 🛌", "Clean Air 🌬️", "I'm not sure 😊"],
@@ -159,36 +159,7 @@ const questions = [
         id: "scentsDislike",
         type: "multiselect",
         label: "Are there any scents you actively dislike or avoid?",
-        options: [
-          {
-            label: "Strong floral perfumes",
-            image:
-              "https://media.istockphoto.com/id/1394440950/photo/natural-view-cosmos-filed-and-sunset-on-garden-background.jpg?s=612x612&w=0&k=20&c=eBnRobwsk2w_9MqM6bnXukIia5j-ayuMS0PeB6GHN0E=",
-          },
-          {
-            label: "Bleach or chemical cleaners",
-            image:
-              "https://media.istockphoto.com/id/478482323/photo/cleaning-product-plastic-container-for-house-clean.jpg?s=612x612&w=0&k=20&c=fsG7e9lRa2IDiY52gau9FMDea5vUTzQ5o15HQLi2XgY=",
-          },
-          {
-            label: "Smoke or incense",
-            image:
-              "https://media.istockphoto.com/id/484581084/photo/incense-stick-aromatherapy.jpg?s=612x612&w=0&k=20&c=2-WjxmWc8VmiO5f85zwAGtZEON8dqH_mKlEabt8DlnY=",
-          },
-          {
-            label: "Spicy or musky scents",
-            image:
-              "https://plus.unsplash.com/premium_photo-1670537994805-815a97fb5bae?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bXVza3klMjBzY2VudHxlbnwwfHwwfHx8MA%3D%3D",
-          },
-          {
-            label: "Food-based smells (e.g., vanilla, baked goods)",
-            image:
-              "https://media.istockphoto.com/id/645542956/photo/french-pastry.jpg?s=612x612&w=0&k=20&c=JE4QgqBdtvMqdMvUPRqvnw-hIfftwtSV8qSoPygF0Qk=",
-          },
-          {
-            label: "I’m sensitive to all strong smells",
-          },
-        ],
+        options: [ "Strong floral perfumes 💐", "Bleach or chemical cleaners 🧪", "Smoke or incense 🔥", "Spicy or musky scents 🌶️", "Food-based smells (e.g., vanilla, baked goods) 🧁", "I’m sensitive to all strong smells 😖"],
       },
       {
         id: "allergies",

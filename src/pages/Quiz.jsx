@@ -17,7 +17,7 @@ import Question9 from "../components/questions/Question9.jsx";
 export const questionComponents = {
   colorPalettes: Question2,
   textures: Question3,
-  scentsLike: Question4,
+  preferredScent: Question4,
   scentsDislike: Question5,
   allergies: Question6,
   sensoryTriggers: Question7,
