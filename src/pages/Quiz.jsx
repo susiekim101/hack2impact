@@ -5,6 +5,7 @@ import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
+import Question4 from "../components/questions/Question4.jsx";
 import Nav from "../components/NavigationButton.jsx";
 
 const allQuestions = quizQuestions.flatMap((section) =>
