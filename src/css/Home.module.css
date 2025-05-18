@@ -2,7 +2,7 @@
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
 }
 
@@ -11,24 +11,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px;
 }
 
 .buttonContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
 }
 
 .logoImage {
-    height:20em;
+    height:10em;
+    margin: 20px;
 }
 
 .button {
     background-color: #E1C1CE;
-    font-size: 2em;
+    font-size: 1em;
     padding: 5px;
     border-radius: 10px;
-    width: 40%;
+    width: 20%;
     margin: 10px;
     border: 3px solid #E1C1CE;
 }
