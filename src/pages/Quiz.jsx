@@ -4,6 +4,7 @@ import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
 import Question2 from "../components/Question2.jsx";
+import Question3 from "../components/Question3.jsx";
 import Nav from "../components/NavigationButton.jsx";
 
 const allQuestions = quizQuestions.flatMap((section) =>
@@ -191,7 +192,7 @@ function Quiz() {
       <QuizTitle title={currentQuestion.sectionTitle} />
       <div className={styles.label}>{currentQuestion.label}</div>
       
-      <Question2 formValues={formValues} setFormValues={setFormValues}/>
+      <Question3 formValues={formValues} setFormValues={setFormValues}/>
       <Nav
         index={questionIndex}
         setIndex={setQuestionIndex}

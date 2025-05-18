@@ -8,6 +8,13 @@ import monobrown from "./assets/colorPalettes/monochromebrown.png";
 import ocean1 from "./assets/colorPalettes/ocean1.png";
 import ocean2 from "./assets/colorPalettes/ocean2.png";
 import peachy from "./assets/colorPalettes/peachypastel.png";
+import cotton from "./assets/texture/cotton.png"
+import fleece from "./assets/texture/fleece.png"
+import microfiber from "./assets/texture/microfiber.png"
+import stone from "./assets/texture/stone.png"
+import velvet from "./assets/texture/velvet.png"
+import wood from "./assets/texture/wood.png"
+import woven from "./assets/texture/woven.png"
 
 const questions = [
   {
@@ -94,13 +101,34 @@ const questions = [
         type: "multiselect",
         label: "Which textures make you feel most comfortable?",
         options: [
-          "Plush / Velvet",
-          "Smooth Cotton or Linen",
-          "Microfiber",
-          "Fleece or Sherpa",
-          "Natural Wood",
-          "Smooth Stone or Tile",
-          "Soft Woven Materials",
+          {
+            label: "cotton",
+            image: cotton,
+          },
+          { 
+            label: "fleece", 
+            image: fleece 
+          },
+          {
+            label: "microfiber",
+            image: microfiber,
+          },
+          {
+            label: "stone",
+            image: stone,
+          },
+          {
+            label: "velvet",
+            image: velvet,
+          },
+          {
+            label: "wood",
+            image: wood,
+          },
+          {
+            label: "woven",
+            image: woven,
+          },
         ],
       },
       {
