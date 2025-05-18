@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
 import CloverSvg from '../assets/svg/clover.svg';
-import BottomWave from '../assets/svg/wave.svg';
 import styles from "../css/Results.module.css";
 
 const tempImages = [
@@ -84,34 +83,31 @@ const Results = () => {
             return (
               <div key={index} className={styles.imageContainer}>
                 <img className={styles.image} src={url} alt={`Design ${key}`} />
-                <p>{captions[key] || "Loading caption..."}</p>
+                <p className={styles.description}>{captions[key] || "Loading caption..."}</p>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Wave section with recommended and avoid lists */}
-      <div className={styles.waveSection}>
-        <img src={BottomWave} alt="Wave bottom" className={styles.wave} />
+      <section className={styles.waveSection}>
         <div className={styles.waveContent}>
-          <div>
-            <h3>Recommended Elements</h3>
-            <ul>
-              {toInclude.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
+          <h3 className={styles.waveHeading}>Recommended Elements</h3>
+          <ul>
+            {toInclude.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
 
-            <h3>Things to Avoid</h3>
-            <ul>
-              {toAvoid.map((item, idx) => (
-                <li key={idx}>{item}</li>
-              ))}
-            </ul>
-          </div>
+          <h3 className={styles.waveHeading}>Things to Avoid</h3>
+          <ul>
+            {toAvoid.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         </div>
-      </div>
+      </section>
+
     </div>
   );
 };
