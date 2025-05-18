@@ -30,6 +30,16 @@ import floral from "../assets/patterns/floral.png";
 import plaid from "../assets/patterns/plaid.png";
 import polka from "../assets/patterns/polka.png";
 import stripe from "../assets/patterns/stripe.png";
+import art from "../assets/patterns/art.png";
+import fabric from "../assets/patterns/fabric.png";
+import heirlooms from "../assets/patterns/heirlooms.png";
+import plants from "../assets/patterns/plants.png";
+import religion from "../assets/patterns/religion.png";
+import blank from "../assets/wall/blank.png";
+import calm from "../assets/wall/calm.png";
+import colorfulWall from "../assets/wall/colorfulWall.png";
+import inspirational from "../assets/wall/inspirational.png";
+import personal from "../assets/wall/personal.png";
 
 const questions = [
   {
@@ -367,12 +377,29 @@ const questions = [
         label:
           "Are there any cultural, spiritual, or religious items that make a space feel more like home to you?",
         options: [
-          "Religious or spiritual symbols (e.g., cross, altar, prayer items)",
-          "Cultural fabrics or patterns (e.g., woven rugs, tapestries)",
-          "Family photos or heirlooms",
-          "Art or imagery from my cultural background",
-          "Plants or nature elements",
-          "None / I prefer not to include these",
+          {
+            label: "Religious or spiritual symbols ",
+            image: religion,
+          },
+          {
+            label: "Cultural fabrics or patterns",
+            image: fabric,
+          },
+          {
+            label: "Family photos or heirlooms",
+            image: heirlooms,
+          },
+          {
+            label: "Art or imagery from my cultural background",
+            image: art,
+          },
+          {
+            label: "Plants or nature elements",
+            image: plants,
+          },
+          {
+            label: "None / I prefer not to include these",
+          },
         ],
       },
       {
@@ -380,12 +407,29 @@ const questions = [
         type: "select",
         label: "What types of wall decorations do you feel most at ease with?",
         options: [
-          "Calming art (landscapes, nature scenes, soft colors)",
-          "Personal photos or photo collages",
-          "Blank or mostly empty walls",
-          "Inspirational quotes or affirmations",
-          "Colorful, expressive art (abstract, cultural, or handmade)",
-          "I’m not sure",
+          {
+            label: "Calming art",
+            image: calm,
+          },
+          {
+            label: "Personal photos or photo collages",
+            image: personal,
+          },
+          {
+            label: "Blank or mostly empty walls",
+            image: blank,
+          },
+          {
+            label: "Inspirational quotes or affirmations",
+            image: inspirational,
+          },
+          {
+            label: "Colorful, expressive art (abstract, cultural, or handmade)",
+            image: colorfulWall,
+          },
+          {
+            label: "I’m not sure",
+          },
         ],
       },
       {

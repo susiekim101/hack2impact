@@ -10,14 +10,14 @@ const Question4 = ({ formValues, setFormValues }) => {
     setFormValues((prev) => {
       const currentSelected = prev[questionId] || [];
       const isSelected = currentSelected.includes(optionValue);
-      
-      if(!isSelected && currentSelected.length >= 3) {
+
+      if (!isSelected && currentSelected.length >= 3) {
         return prev;
       }
 
       const updated = isSelected
-      ? currentSelected.filter((val) => val !== optionValue)
-      : [...currentSelected, optionValue];
+        ? currentSelected.filter((val) => val !== optionValue)
+        : [...currentSelected, optionValue];
 
       const newFormValues = {
         ...prev,
@@ -28,26 +28,25 @@ const Question4 = ({ formValues, setFormValues }) => {
       return newFormValues;
     });
   };
-  
 
   return (
     <>
-    <p className={styles.caption}>Select up to three.</p>
-    <div className={styles.answerContainer}>
-      <div className={styles.multipleChoice}>
-        {options.map((opt, idx) => (
-          <div
-            key={idx}
-            className={`${styles.option} ${
-              selected.includes(opt) ? styles.selected : ""
-            }`}
-            onClick={() => toggleSelection(opt)}
-          >
-            {opt}
-          </div>
-        ))}
+      <p className={styles.caption}>Select up to three.</p>
+      <div className={styles.answerContainer}>
+        <div className={styles.multipleChoice}>
+          {options.map((opt, idx) => (
+            <div
+              key={idx}
+              className={`${styles.option} ${
+                selected.includes(opt) ? styles.selected : ""
+              }`}
+              onClick={() => toggleSelection(opt)}
+            >
+              {opt}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 };
