@@ -19,6 +19,18 @@ const tempImages = [
 const captionKeys = ["interiorDesign", "colorPalette", "furnitureDesign"];
 
 const Results = () => {
+  /*extracting json*/
+  const location = useLocation();
+  const quizData = location.state?.quizData;
+  console.log(quizData);
+
+  const [summary, setSummary] = useState({ title: "", description: "" });
+  const [images, setImages] = useState([]);
+  const [captions, setCaptions] = useState({});
+  const [toInclude, setToInclude] = useState([]);
+  const [toAvoid, setToAvoid] = useState([]);
+  const [loading, setLoading] = useState(true);
+
   const user = auth.currentUser;
 
   const saveResultsToFirestore = async () => {
@@ -38,18 +50,6 @@ const Results = () => {
       console.error("error saving results:", error);
     }
   };
-
-  /*extracting json*/
-  const location = useLocation();
-  const quizData = location.state?.quizData;
-  console.log(quizData);
-
-  const [summary, setSummary] = useState({ title: "", description: "" });
-  const [images, setImages] = useState([]);
-  const [captions, setCaptions] = useState({});
-  const [toInclude, setToInclude] = useState([]);
-  const [toAvoid, setToAvoid] = useState([]);
-  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchOutput = async () => {
       try {
@@ -78,13 +78,26 @@ const Results = () => {
       } catch (error) {
         console.error("Failed to load quiz output:", error);
       } finally {
-        saveResultsToFirestore();
         setLoading(false);
       }
     };
 
     fetchOutput();
   }, []);
+
+  useEffect(() => {
+    const ready =
+      summary.title &&
+      summary.description &&
+      images.length &&
+      Object.keys(captions).length &&
+      toInclude.length &&
+      toAvoid.length;
+
+    if (!loading && ready) {
+      saveResultsToFirestore();
+    }
+  }, [loading, summary, images, captions, toInclude, toAvoid]);
 
   if (loading) return <div>Loading assessment...</div>;
 
