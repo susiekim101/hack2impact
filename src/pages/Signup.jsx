@@ -45,17 +45,6 @@ export default function Signup() {
     }
   };
 
-  const handleGoogleSignup = async () => {
-    try {
-      const user = await signupWithGoogle();
-      console.log("User signuped up with Google:", user);
-      setError("");
-    } catch (error) {
-      setError("Sign up failed. Please try again.");
-      console.error("Error signing up with Google:", error);
-    }
-  };
-
   return (
     <div className={styles.container}>
       <div>
@@ -84,11 +73,11 @@ export default function Signup() {
           required
         />
         {passwordError && <p className={styles.errorText}>{passwordError}</p>}
-        <button type="submit">Submit</button>
+        <button type="submit" className={styles.button}>
+          Sign Up
+        </button>
       </form>
-      <button onClick={handleGoogleSignup} className={styles.googleButton}>
-        Sign up with Google
-      </button>
+
       {error && <p className={styles.errorText}>{error}</p>}
       <Link to="/login" className={styles.link}>
         Already have an account? Log in

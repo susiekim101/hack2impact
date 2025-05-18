@@ -73,7 +73,6 @@ function Quiz() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("submitted");
     console.log("Submitting form values:", formValues);
     navigate("/results", { state: { quizData: formValues } });
   };
@@ -100,7 +99,9 @@ function Quiz() {
           )}
 
           {questionIndex === allQuestions.length - 1 ? (
-            <button type="submit">Submit</button>
+            <button className={styles.submitForm} type="submit">
+              Submit
+            </button>
           ) : (
             <Nav
               index={questionIndex}
