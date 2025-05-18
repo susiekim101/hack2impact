@@ -1,5 +1,6 @@
 .image {
    border: 2vh solid transparent;
+   border-radius: 25px;
 }
 
 .imageRow {
@@ -12,9 +13,10 @@
 }
 
 .heading {
-   font-size: x-large;
+   font-size: xx-large;
    font-weight: bold;
-   padding-top: 2vh;
+   padding-top: 6vh;
+   padding-bottom: 2vh;
 }
 
 .imageContainer {
@@ -25,18 +27,23 @@
 
 .imageContainer:nth-child(1) .image {
    border-color: #DAB3C1;
+   border-radius: 15px;
 }
 
 .imageContainer:nth-child(2) .image {
    border-color: #C1CDB5;
+   margin-top: 3rem;
+   border-radius: 15px;
 }
 
 .imageContainer:nth-child(3) .image {
    border-color: #C3DCD8;
+   border-radius: 15px;
 }
 
 .description {
-   font-size: medium;
+   padding-top: 1rem;
+   font-size: small;
    font-weight: normal;
 }
 
@@ -76,18 +83,24 @@
    background: url('../assets/svg/wave.svg') no-repeat bottom center;
    background-size: cover;
    color: white;
-   padding-top: 5rem;
+   padding-top: 3rem;
 }
 
 .waveContent {
+   padding-top: 2rem;
    max-width: 800px;
    margin: 0 auto;
    text-align: left;
-   padding-bottom: 1rem;
+   padding-bottom: 2rem;
+}
+
+.waveText {
+   font-size: small;
 }
 
 .waveHeading {
    font-weight: bold;
+   font-size: large;
 }
 
 .wave {
