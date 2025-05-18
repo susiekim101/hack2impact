@@ -191,8 +191,8 @@ function Quiz() {
       <QuizBar currentQuestion={progressQuestionNumber} />
       <QuizTitle title={currentQuestion.sectionTitle} />
       <div className={styles.label}>{currentQuestion.label}</div>
-
       <Question2 formValues={formValues} setFormValues={setFormValues} />
+
       <Nav
         index={questionIndex}
         setIndex={setQuestionIndex}
