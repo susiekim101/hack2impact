@@ -1,20 +1,13 @@
-import babypastel from "./assets/colorPalettes/babypastel.png";
-import earthy1 from "./assets/colorPalettes/earthy1.png";
-import earthy2 from "./assets/colorPalettes/earthy2.png";
-import forest from "./assets/colorPalettes/forest.png";
-import monogray from "./assets/colorPalettes/monochromaticgray.png";
-import monoslate from "./assets/colorPalettes/monochromaticslate.png";
-import monobrown from "./assets/colorPalettes/monochromebrown.png";
-import ocean1 from "./assets/colorPalettes/ocean1.png";
-import ocean2 from "./assets/colorPalettes/ocean2.png";
-import peachy from "./assets/colorPalettes/peachypastel.png";
-import cotton from "./assets/texture/cotton.png"
-import fleece from "./assets/texture/fleece.png"
-import microfiber from "./assets/texture/microfiber.png"
-import stone from "./assets/texture/stone.png"
-import velvet from "./assets/texture/velvet.png"
-import wood from "./assets/texture/wood.png"
-import woven from "./assets/texture/woven.png"
+import babypastel from "../assets/colorPalettes/babypastel.png";
+import earthy1 from "../assets/colorPalettes/earthy1.png";
+import earthy2 from "../assets/colorPalettes/earthy2.png";
+import forest from "../assets/colorPalettes/forest.png";
+import monogray from "../assets/colorPalettes/monochromaticgray.png";
+import monoslate from "../assets/colorPalettes/monochromaticslate.png";
+import monobrown from "../assets/colorPalettes/monochromebrown.png";
+import ocean1 from "../assets/colorPalettes/ocean1.png";
+import ocean2 from "../assets/colorPalettes/ocean2.png";
+import peachy from "../assets/colorPalettes/peachypastel.png";
 
 const questions = [
   {
@@ -23,15 +16,22 @@ const questions = [
       { id: "firstName", type: "text", label: "First Name", style: "small" },
       { id: "lastName", type: "text", label: "Last Name", style: "small" },
       { id: "phone", type: "text", label: "Phone Number", style: "small" },
-      { id: "email", type: "email", label: "Email", style: "small"},
+      { id: "email", type: "email", label: "Email", style: "small" },
       { id: "birthdate", type: "date", label: "Birthdate", style: "small" },
-      { id: "gender", type: "select", label: "Gender", style: "small",
+      {
+        id: "gender",
+        type: "select",
+        label: "Gender",
+        style: "small",
         options: ["Male", "Female", "Non-binary", "Prefer not to say"],
       },
-      { id: "ethnicity", type: "multiselect", label:
+      {
+        id: "ethnicity",
+        type: "multiselect",
+        label:
           "Which of the following ethnicities/races do you identify with? (Select all that apply)",
         style: "large",
-          options: [
+        options: [
           "Latinx/Hispanic",
           "Black/African American",
           "Pacific Islander",
@@ -41,10 +41,19 @@ const questions = [
           "Other",
         ],
       },
-      { id: "household", type: "select", label: "How many people are in your household?", style: "large",
+      {
+        id: "household",
+        type: "select",
+        label: "How many people are in your household?",
+        style: "large",
         options: ["1", "2", "3", "4+"],
       },
-      { id: "disabilities", type: "textarea", label: "Do you have any disabilities?", style:"large" },
+      {
+        id: "disabilities",
+        type: "textarea",
+        label: "Do you have any disabilities?",
+        style: "large",
+      },
     ],
   },
 
@@ -68,16 +77,18 @@ const questions = [
             label: "Earthy brown and green",
             image: earthy2,
           },
-          { 
-            label: "Forest green and dirt brown", 
-            image: forest },
+          {
+            label: "Forest green and dirt brown",
+            image: forest,
+          },
           {
             label: "Monochromatic shades of gray",
             image: monogray,
           },
-          { 
-            label: "Monochromatic shades of slate blue", 
-            image: monoslate },
+          {
+            label: "Monochromatic shades of slate blue",
+            image: monoslate,
+          },
           {
             label: "Monochromatic shades of brown",
             image: monobrown,
