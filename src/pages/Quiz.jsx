@@ -8,6 +8,7 @@ import Nav from "../components/NavigationButton.jsx";
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
 import Question4 from "../components/questions/Question4.jsx";
+<<<<<<< HEAD
 import Question5 from "../components/questions/Question5.jsx";
 import Question6 from "../components/questions/Question6.jsx";
 import Question7 from "../components/questions/Question7.jsx";
@@ -24,6 +25,9 @@ export const questionComponents = {
   layoutSafety: Question8,
   controlOfSpace: Question9,
 };
+=======
+import Nav from "../components/NavigationButton.jsx";
+>>>>>>> a27f3bd986468e7ff76e08d81952660ecf3847b5
 
 const allQuestions = quizQuestions.flatMap((section) =>
   section.questions.map((q) => ({ ...q, sectionTitle: section.section }))

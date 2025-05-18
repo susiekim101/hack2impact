@@ -150,42 +150,10 @@ const questions = [
         ],
       },
       {
-        id: "scentsLike",
+        id: "preferreScent",
         type: "multiselect",
         label: "Which scents help you feel calm or at home?",
-        options: [
-          {
-            label: "Woody",
-            image:
-              "https://plus.unsplash.com/premium_photo-1700670284018-17d39357f45c?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29vZHklMjBzY2VudHxlbnwwfHwwfHx8MA%3D%3D",
-          },
-          {
-            label: "Earthy",
-            image:
-              "https://images.unsplash.com/photo-1597691306883-ac4e882e7cc4?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGlydHxlbnwwfHwwfHx8MA%3D%3D",
-          },
-          {
-            label: "Herbal",
-            image:
-              "https://plus.unsplash.com/premium_photo-1663036948705-7dee4d33c07a?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGVyYmFsfGVufDB8fDB8fHww",
-          },
-          {
-            label: "Gentle Citrus",
-            image:
-              "https://images.unsplash.com/photo-1546548970-71785318a17b?w=1200&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2l0cnVzfGVufDB8fDB8fHww",
-          },
-          {
-            label: "Fresh Linen / Clean Air",
-            image:
-              "https://media.istockphoto.com/id/186849019/photo/clothesline.jpg?s=612x612&w=0&k=20&c=tbGGGTL8IEGyhKTlnQ4LAPa-NUG9EsR9gpeS6G7cHVk=",
-          },
-          {
-            label: "Prefer unscented spaces",
-          },
-          {
-            label: "I’m not sure",
-          },
-        ],
+        options: [ "Woody 🪵", "Earthy 🌎", "Herbal 🌿", "Gentle Citrus 🍊", "Fresh Linen 🛌", "Clean Air 🌬️", "I'm not sure 😊"],
       },
       {
         id: "scentsDislike",

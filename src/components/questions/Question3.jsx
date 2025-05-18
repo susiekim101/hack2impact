@@ -1,5 +1,5 @@
 import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/Question3.module.css";
+import styles from "../../css/questions/Question3.module.css";
 
 const Question3 = ({ formValues, setFormValues }) => {
   const questionId = "textures";
@@ -10,14 +10,14 @@ const Question3 = ({ formValues, setFormValues }) => {
     setFormValues((prev) => {
       const selected = prev[questionId] || [];
       const isSelected = selected.includes(optionValue);
-      let updated;
 
-      if (isSelected) {
-        updated = selected.filter((val) => val != optionValue);
-      } else {
-        if (selected.length >= 3) return;
-        updated = [...selected, optionValue];
+      if(!isSelected && selected.length >= 3) {
+        return prev;
       }
+
+      const updated = isSelected
+      ? selected.filter((val) => val !== optionValue)
+      : [...selected, optionValue];
 
       const newFormValues = {
         ...prev,
