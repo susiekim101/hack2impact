@@ -1,43 +1,16 @@
-import { useState } from "react";
-import QuizBar from "../components/QuizBar.jsx";
-import QuizTitle from "../components/QuizTitle.jsx";
-import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
-import RenderQuestions from "../components/RenderQuestions.jsx";
 
-const allQuestions = quizQuestions.flatMap((section) =>
-  section.questions.map((q) => ({ ...q, sectionTitle: section.section }))
-);
-
-const firstSectionTitle = quizQuestions[0].section;
-const firstSectionQuestions = allQuestions.filter(
-  (q) => q.sectionTitle === firstSectionTitle
-);
-
-function Quiz() {
-  const [questionIndex, setQuestionIndex] = useState(0);
-  const [formValues, setFormValues] = useState({});
-
-  const isInFirstSection = questionIndex < firstSectionQuestions.length;
-
-  const progressQuestionNumber = isInFirstSection
-    ? 1
-    : questionIndex - firstSectionQuestions.length + 2;
-
-  const currentQuestion = allQuestions[questionIndex];
-
-  const handleChange = (questionId, value) => {
-    setFormValues((prev) => ({
-      ...prev,
-      [questionId]: value,
-    }));
-  };
-
+function FirstSectionForm({
+  questions,
+  formValues,
+  handleChange,
+  onNextClick,
+}) {
   const groupedQuestions = [];
   let tempSmallGroup = [];
 
-  for (let i = 0; i < firstSectionQuestions.length; i++) {
-    const current = firstSectionQuestions[i];
+  for (let i = 0; i < questions.length; i++) {
+    const current = questions[i];
 
     if (current.style === "small") {
       tempSmallGroup.push(current);
@@ -53,12 +26,81 @@ function Quiz() {
     groupedQuestions.push([...tempSmallGroup]);
   }
 
-  const renderFirstSection = (
+  return (
     <div className={styles.quizContainer}>
       <div>
-        <QuizBar currentQuestion={progressQuestionNumber} />
-        <QuizTitle title={firstSectionTitle} />
+        <QuizBar currentQuestion={1} />
+        <QuizTitle title={questions[0].sectionTitle} />
       </div>
+      <form className={styles.form}>
+        {groupedQuestions.map((group, groupIdx) => {
+          const isRow = group[0].style === "small";
+
+          return (
+            <div
+              key={groupIdx}
+              className={isRow ? styles.rowGroup : styles.columnGroup}
+            >
+              {group.map((question) => (
+                <div
+                  key={question.id}
+                  className={isRow ? styles.rowItem : undefined}
+                >
+                  <label className={styles.label}>{question.label}</label>
+                  {question.type === "text" && (
+                    <input
+                      type="text"
+                      className={styles.text}
+                      value={formValues[question.id] || ""}
+                      onChange={(e) =>
+                        handleChange(question.id, e.target.value)
+                      }
+                    />
+                  )}
+                  {/* repeat for other input types (select, email, date, etc.) */}
+                </div>
+              ))}
+            </div>
+          );
+        })}
+      </form>
+      <div className={styles.footer}>
+        <button type="button" className={styles.next} onClick={onNextClick}>
+          Next &gt;
+        </button>
+      </div>
+    </div>
+  );
+}
+
+export default FirstSectionForm;
+
+/*
+
+import styles from "./BasicInfoForm.module.css";
+
+function BasicInfoForm({ questions, formValues, handleChange, onNextClick }) {
+  const groupedQuestions = [];
+  let tempSmallGroup = [];
+
+  for (let i = 0; i < questions.length; i++) {
+    const current = questions[i];
+
+    if (current.style === "small") {
+      tempSmallGroup.push(current);
+    } else {
+      if (tempSmallGroup.length > 0) {
+        groupedQuestions.push([...tempSmallGroup]);
+        tempSmallGroup = [];
+      }
+      groupedQuestions.push([current]);
+    }
+  }
+  if (tempSmallGroup.length > 0) {
+    groupedQuestions.push([...tempSmallGroup]);
+  }
+  return (
+    <>
       <form className={styles.form}>
         {groupedQuestions.map((group, groupIdx) => {
           const isRow = group[0].style === "small";
@@ -170,49 +212,9 @@ function Quiz() {
           );
         })}
       </form>
-      <div className={styles.footer}>
-        <button
-          type="button"
-          className={styles.next}
-          onClick={() => setQuestionIndex(firstSectionQuestions.length)}
-        >
-          Next &gt;
-        </button>
-      </div>
-    </div>
-  );
-
-  const renderOtherQuestions = (
-    <>
-      <QuizBar currentQuestion={progressQuestionNumber} />
-      <QuizTitle title={currentQuestion.sectionTitle} />
-      <div className={styles.label}>{currentQuestion.label}</div>
-      <RenderQuestions />
-
-      <button
-        type="button"
-        onClick={() => setQuestionIndex((prev) => Math.max(prev - 1, 0))}
-        disabled={questionIndex === 0}
-        className={styles.previous}
-      >
-        Previous
-      </button>
-      <button
-        type="button"
-        onClick={() =>
-          setQuestionIndex((prev) =>
-            Math.min(prev + 1, allQuestions.length - 1)
-          )
-        }
-        disabled={questionIndex === allQuestions.length - 1}
-      >
-        Next
-      </button>
     </>
   );
-
-  return <>{isInFirstSection ? renderFirstSection : renderOtherQuestions}</>;
 }
 
-export default Quiz;
-// email, date, multiselect, textarea
+export default BasicInfoForm;
+*/
