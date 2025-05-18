@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import CloverSvg from "../assets/svg/clover.svg";
 import BottomWave from "../assets/svg/wave.svg";
 import styles from "../css/Results.module.css";
+import { useNavigate, Link } from "react-router-dom";
 
 /*
 const tempImages = [
@@ -91,6 +92,10 @@ const Results = () => {
           })}
         </div>
       </div>
+
+      <Link to="/quiz">
+        <button>Retake Quiz</button>
+      </Link>
 
       <div className={styles.waveSection}>
         <img src={BottomWave} alt="Wave bottom" className={styles.wave} />
