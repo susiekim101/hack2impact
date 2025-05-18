@@ -4,6 +4,7 @@ import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
 import Nav from "../components/NavigationButton.jsx";
+import { useNavigate } from "react-router-dom";
 
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
@@ -13,16 +14,18 @@ import Question6 from "../components/questions/Question6.jsx";
 import Question7 from "../components/questions/Question7.jsx";
 import Question8 from "../components/questions/Question8.jsx";
 import Question9 from "../components/questions/Question9.jsx";
+import Question16 from "../components/questions/Question16.jsx";
 
 export const questionComponents = {
   colorPalettes: Question2,
   textures: Question3,
-  preferredScent: Question4,
+  scentsLike: Question4,
   scentsDislike: Question5,
   allergies: Question6,
   sensoryTriggers: Question7,
   layoutSafety: Question8,
   controlOfSpace: Question9,
+  pets: Question16,
 };
 
 const allQuestions = quizQuestions.flatMap((section) =>
@@ -35,6 +38,7 @@ const firstSectionQuestions = allQuestions.filter(
 );
 
 function Quiz() {
+  const navigate = useNavigate();
   const [questionIndex, setQuestionIndex] = useState(0);
   const [formValues, setFormValues] = useState({});
 
@@ -53,6 +57,13 @@ function Quiz() {
     }));
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("submitted");
+    console.log("Submitting form values:", formValues);
+    navigate("/results", { state: { quizData: formValues } });
+  };
+
   const groupedQuestions = [];
   let tempSmallGroup = [];
 
@@ -61,22 +72,29 @@ function Quiz() {
 
     return (
       <>
-        <QuizBar currentQuestion={progressQuestionNumber} />
-        <QuizTitle title={currentQuestion.sectionTitle} />
-        <div className={styles.label}>{currentQuestion.label}</div>
-        {QuestionComponent ? (
-          <QuestionComponent
-            formValues={formValues}
-            setFormValues={setFormValues}
-          />
-        ) : (
-          <div>Missing component for {currentQuestion.id}</div>
-        )}
-        <Nav
-          index={questionIndex}
-          setIndex={setQuestionIndex}
-          total={allQuestions.length}
-        />
+        <form onSubmit={handleSubmit}>
+          <QuizBar currentQuestion={progressQuestionNumber} />
+          <QuizTitle title={currentQuestion.sectionTitle} />
+          <div className={styles.label}>{currentQuestion.label}</div>
+          {QuestionComponent ? (
+            <QuestionComponent
+              formValues={formValues}
+              setFormValues={setFormValues}
+            />
+          ) : (
+            <div>Missing component for {currentQuestion.id}</div>
+          )}
+
+          {questionIndex === allQuestions.length - 1 ? (
+            <button type="submit">Submit</button>
+          ) : (
+            <Nav
+              index={questionIndex}
+              setIndex={setQuestionIndex}
+              total={allQuestions.length}
+            />
+          )}
+        </form>
       </>
     );
   })();

@@ -1,8 +1,8 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question6.module.css";
 
-const Question6 = ({ formValues, setFormValues }) => {
-  const questionId = "allergies";
+const Question16 = ({ formValues, setFormValues }) => {
+  const questionId = "pets";
 
   const handleSelect = (optionValue) => {
     setFormValues((prev) => ({
@@ -24,4 +24,4 @@ const Question6 = ({ formValues, setFormValues }) => {
   );
 };
 
-export default Question6;
+export default Question16;

@@ -1,13 +1,13 @@
-import babypastel from "../assets/colorPalettes/babypastel.png";
-import earthy1 from "../assets/colorPalettes/earthy1.png";
-import earthy2 from "../assets/colorPalettes/earthy2.png";
-import forest from "../assets/colorPalettes/forest.png";
-import monogray from "../assets/colorPalettes/monochromaticgray.png";
-import monoslate from "../assets/colorPalettes/monochromaticslate.png";
-import monobrown from "../assets/colorPalettes/monochromebrown.png";
-import ocean1 from "../assets/colorPalettes/ocean1.png";
-import ocean2 from "../assets/colorPalettes/ocean2.png";
-import peachy from "../assets/colorPalettes/peachypastel.png";
+import babypastel from "../assets/colorpalettes/babypastel.png";
+import earthy1 from "../assets/colorpalettes/earthy1.png";
+import earthy2 from "../assets/colorpalettes/earthy2.png";
+import forest from "../assets/colorpalettes/forest.png";
+import monogray from "../assets/colorpalettes/monochromaticgray.png";
+import monoslate from "../assets/colorpalettes/monochromaticslate.png";
+import monobrown from "../assets/colorpalettes/monochromebrown.png";
+import ocean1 from "../assets/colorpalettes/ocean1.png";
+import ocean2 from "../assets/colorpalettes/ocean2.png";
+import peachy from "../assets/colorpalettes/peachypastel.png";
 import cotton from "../assets/texture/cotton.png";
 import fleece from "../assets/texture/fleece.png";
 import microfiber from "../assets/texture/microfiber.png";
@@ -182,7 +182,14 @@ const questions = [
         id: "scentsDislike",
         type: "multiselect",
         label: "Are there any scents you actively dislike or avoid?",
-        options: [ "Strong floral perfumes 💐", "Bleach or chemical cleaners 🧪", "Smoke or incense 🔥", "Spicy or musky scents 🌶️", "Food-based smells (e.g., vanilla, baked goods) 🧁", "I’m sensitive to all strong smells 😖"],
+        options: [
+          "Strong floral perfumes 💐",
+          "Bleach or chemical cleaners 🧪",
+          "Smoke or incense 🔥",
+          "Spicy or musky scents 🌶️",
+          "Food-based smells (e.g., vanilla, baked goods) 🧁",
+          "I’m sensitive to all strong smells 😖",
+        ],
       },
       {
         id: "allergies",

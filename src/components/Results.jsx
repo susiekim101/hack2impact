@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
+import { useLocation } from "react-router-dom";
 
 const tempImages = [
   "https://plus.unsplash.com/premium_photo-1670360414483-64e6d9ba9038?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -9,14 +10,12 @@ const tempImages = [
 
 const captionKeys = ["interiorDesign", "colorPalette", "furnitureDesign"];
 
-const sampleQuizResult = {
-  name: "Alice",
-  sensoryTriggers: ["bright lights", "loud noises"],
-  colorPreferences: ["soft blues", "earth tones"],
-  lifestyleNeeds: ["calm workspace", "natural light"],
-};
-
 const Results = () => {
+  /*extracting json*/
+  const location = useLocation();
+  const quizData = location.state?.quizData;
+  console.log(quizData);
+
   const [summary, setSummary] = useState({ title: "", description: "" });
   //const [images, setImages] = useState([]);
   const [captions, setCaptions] = useState({});
@@ -26,7 +25,7 @@ const Results = () => {
   useEffect(() => {
     const fetchOutput = async () => {
       try {
-        const result = await getQuizOutput(sampleQuizResult);
+        const result = await getQuizOutput(quizData);
 
         // Get the string inside result.descriptionSummary
         let rawJsonString = result.descriptionSummary || "";
