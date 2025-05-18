@@ -31,10 +31,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
   width: 100%;
   margin: 10px;
-  overflow-y: auto;
 }
 .sectionTitle {
   font-size: 50px;
@@ -82,4 +80,20 @@
   padding-left: 10px;
   width: 100%;
   justify-content: space-between;
+}
+
+.next:hover,
+.prev:hover {
+  cursor: pointer;
+}
+
+.submitForm {
+  margin-top: 0.7rem;
+  width: 13vw;
+  padding: 1.5vh 0;
+  border: 0.3vh solid #650909;
+  border-radius: 2vh;
+  background-color: #e1c1ce;
+  cursor: pointer;
+  margin-bottom: 0;
 }
