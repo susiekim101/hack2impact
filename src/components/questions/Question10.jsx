@@ -1,10 +1,10 @@
 import quizQuestions from "../../utils/quizQuestions";
 import styles from "../../css/questions/Question4.module.css";
 
-const Question8 = ({ formValues, setFormValues }) => {
-  const questionId = "layoutSafety";
+const Question10 = ({ formValues, setFormValues }) => {
+  const questionId = "lightingPreference";
   const selected = formValues[questionId] || "";
-  const options = quizQuestions[3].questions[0].options;
+  const options = quizQuestions[3].questions[2].options;
 
   const handleSelect = (optionValue) => {
     setFormValues((prev) => ({
@@ -33,4 +33,4 @@ const Question8 = ({ formValues, setFormValues }) => {
   );
 };
 
-export default Question8;
+export default Question10;

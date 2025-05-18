@@ -14,7 +14,14 @@ import Question6 from "../components/questions/Question6.jsx";
 import Question7 from "../components/questions/Question7.jsx";
 import Question8 from "../components/questions/Question8.jsx";
 import Question9 from "../components/questions/Question9.jsx";
+import Question10 from "../components/questions/Question10.jsx";
+import Question11 from "../components/questions/Question11.jsx";
+import Question12 from "../components/questions/Question12.jsx";
+import Question13 from "../components/questions/Question13.jsx";
+import Question14 from "../components/questions/Question14.jsx";
+import Question15 from "../components/questions/Question15.jsx";
 import Question16 from "../components/questions/Question16.jsx";
+import Question17 from "../components/questions/Question17.jsx";
 
 export const questionComponents = {
   colorPalettes: Question2,
@@ -25,7 +32,14 @@ export const questionComponents = {
   sensoryTriggers: Question7,
   layoutSafety: Question8,
   controlOfSpace: Question9,
-  pets: Question16,
+  lightingPreference: Question10,
+  relaxingSounds: Question11,
+  furnitureStyle: Question12,
+  patterns: Question13,
+  decorStyle: Question14,
+  culturalItems: Question15,
+  wallDecor: Question16,
+  pets: Question17,
 };
 
 const allQuestions = quizQuestions.flatMap((section) =>

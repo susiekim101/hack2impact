@@ -1,26 +1,53 @@
 import quizQuestions from "../../utils/quizQuestions";
-import styles from "../../css/questions/Question6.module.css";
+import styles from "../../css/questions/Question4.module.css";
 
 const Question16 = ({ formValues, setFormValues }) => {
-  const questionId = "pets";
+  const questionId = "wallDecor";
+  const selected = formValues[questionId] || [];
+  const options = quizQuestions[4].questions[4].options;
 
-  const handleSelect = (optionValue) => {
-    setFormValues((prev) => ({
-      ...prev,
-      [questionId]: optionValue,
-    }));
+  const toggleSelection = (optionValue) => {
+    setFormValues((prev) => {
+      const currentSelected = prev[questionId] || [];
+      const isSelected = currentSelected.includes(optionValue);
+
+      if (!isSelected && currentSelected.length >= 3) {
+        return prev;
+      }
+
+      const updated = isSelected
+        ? currentSelected.filter((val) => val !== optionValue)
+        : [...currentSelected, optionValue];
+
+      const newFormValues = {
+        ...prev,
+        [questionId]: updated,
+      };
+
+      console.log("updating formvalues: ", newFormValues);
+      return newFormValues;
+    });
   };
 
   return (
-    <div className={styles.answerContainer}>
-      <textarea
-        className={styles.textarea}
-        value={formValues[questionId] || ""}
-        onChange={(e) => handleSelect(e.target.value)}
-        rows={1}
-        placeholder="Type your response here..."
-      />
-    </div>
+    <>
+      <p className={styles.caption}>Select up to three.</p>
+      <div className={styles.answerContainer}>
+        <div className={styles.multipleChoice}>
+          {options.map((opt, idx) => (
+            <div
+              key={idx}
+              className={`${styles.option} ${
+                selected.includes(opt) ? styles.selected : ""
+              }`}
+              onClick={() => toggleSelection(opt)}
+            >
+              {opt}
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 };
 
