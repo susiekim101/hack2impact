@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
-import CloverSvg from '../assets/svg/clover.svg';
+import CloverSvg from "../assets/svg/clover.svg";
 import styles from "../css/Results.module.css";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 /*
 const tempImages = [
@@ -85,7 +85,9 @@ const Results = () => {
             return (
               <div key={index} className={styles.imageContainer}>
                 <img className={styles.image} src={url} alt={`Design ${key}`} />
-                <p className={styles.description}>{captions[key] || "Loading caption..."}</p>
+                <p className={styles.description}>
+                  {captions[key] || "Loading caption..."}
+                </p>
               </div>
             );
           })}
@@ -96,8 +98,7 @@ const Results = () => {
         <button>Retake Quiz</button>
       </Link>
 
-      <div className={styles.waveSection}>
-        <img src={BottomWave} alt="Wave bottom" className={styles.wave} />
+      <section className={styles.waveSection}>
         <div className={styles.waveContent}>
           <h3 className={styles.waveHeading}>Recommended Elements</h3>
           <ul>
@@ -114,7 +115,6 @@ const Results = () => {
           </ul>
         </div>
       </section>
-
     </div>
   );
 };
