@@ -1,0 +1,33 @@
+body {
+    height: auto;
+}
+
+.image {
+  border: 2vh solid transparent;
+}
+
+.imageRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.imageContainer {
+  flex: 1 1 30%;
+  max-width: 30%;
+  text-align: center;
+}
+
+.imageContainer:nth-child(1) .image {
+  border-color: #DAB3C1; 
+}
+
+.imageContainer:nth-child(2) .image {
+  border-color: #C1CDB5; 
+}
+
+.imageContainer:nth-child(3) .image {
+  border-color: #C3DCD8; 
+}
