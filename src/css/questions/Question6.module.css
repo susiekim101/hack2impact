@@ -1,0 +1,11 @@
+.answerContainer {
+    width: 100%;
+    margin: 5px;
+}
+
+.textarea {
+    background-color: #E1C1CE;
+    width: 100%;
+    border-radius: 5px;
+    padding: 5px;
+}
