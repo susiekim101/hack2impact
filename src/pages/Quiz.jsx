@@ -3,9 +3,27 @@ import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
+import Nav from "../components/NavigationButton.jsx";
+
 import Question2 from "../components/questions/Question2.jsx";
 import Question3 from "../components/questions/Question3.jsx";
-import Nav from "../components/NavigationButton.jsx";
+import Question4 from "../components/questions/Question4.jsx";
+import Question5 from "../components/questions/Question5.jsx";
+import Question6 from "../components/questions/Question6.jsx";
+import Question7 from "../components/questions/Question7.jsx";
+import Question8 from "../components/questions/Question8.jsx";
+import Question9 from "../components/questions/Question9.jsx";
+
+export const questionComponents = {
+  colorPalettes: Question2,
+  textures: Question3,
+  scentsLike: Question4,
+  scentsDislike: Question5,
+  allergies: Question6,
+  sensoryTriggers: Question7,
+  layoutSafety: Question8,
+  controlOfSpace: Question9,
+};
 
 const allQuestions = quizQuestions.flatMap((section) =>
   section.questions.map((q) => ({ ...q, sectionTitle: section.section }))
@@ -37,6 +55,31 @@ function Quiz() {
 
   const groupedQuestions = [];
   let tempSmallGroup = [];
+
+  const renderOtherQuestions = (() => {
+    const QuestionComponent = questionComponents[currentQuestion.id];
+
+    return (
+      <>
+        <QuizBar currentQuestion={progressQuestionNumber} />
+        <QuizTitle title={currentQuestion.sectionTitle} />
+        <div className={styles.label}>{currentQuestion.label}</div>
+        {QuestionComponent ? (
+          <QuestionComponent
+            formValues={formValues}
+            setFormValues={setFormValues}
+          />
+        ) : (
+          <div>Missing component for {currentQuestion.id}</div>
+        )}
+        <Nav
+          index={questionIndex}
+          setIndex={setQuestionIndex}
+          total={allQuestions.length}
+        />
+      </>
+    );
+  })();
 
   for (let i = 0; i < firstSectionQuestions.length; i++) {
     const current = firstSectionQuestions[i];
@@ -186,23 +229,7 @@ function Quiz() {
     </div>
   );
 
-  const renderOtherQuestions = (
-    <>
-      <QuizBar currentQuestion={progressQuestionNumber} />
-      <QuizTitle title={currentQuestion.sectionTitle} />
-      <div className={styles.label}>{currentQuestion.label}</div>
-      <Question2 formValues={formValues} setFormValues={setFormValues} />
-
-      <Nav
-        index={questionIndex}
-        setIndex={setQuestionIndex}
-        total={allQuestions.length}
-      />
-    </>
-  );
-
   return <>{isInFirstSection ? renderFirstSection : renderOtherQuestions}</>;
 }
 
 export default Quiz;
-// email, date, multiselect, textarea
