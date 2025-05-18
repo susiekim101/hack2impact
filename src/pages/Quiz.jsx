@@ -3,8 +3,8 @@ import QuizBar from "../components/QuizBar.jsx";
 import QuizTitle from "../components/QuizTitle.jsx";
 import quizQuestions from "../utils/quizQuestions.js";
 import styles from "../css/Quiz.module.css";
-import Question2 from "../components/Question2.jsx";
-import Question3 from "../components/Question3.jsx";
+import Question2 from "../components/questions/Question2.jsx";
+import Question3 from "../components/questions/Question3.jsx";
 import Nav from "../components/NavigationButton.jsx";
 
 const allQuestions = quizQuestions.flatMap((section) =>
