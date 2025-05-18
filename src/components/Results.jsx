@@ -19,6 +19,9 @@ const tempImages = [
 const captionKeys = ["interiorDesign", "colorPalette", "furnitureDesign"];
 
 const Results = () => {
+  const { state } = useLocation();
+  const previous = state?.previous;
+  console.log("previous", previous);
   /*extracting json*/
   const location = useLocation();
   const quizData = location.state?.quizData;
@@ -50,10 +53,14 @@ const Results = () => {
       console.error("error saving results:", error);
     }
   };
+
   useEffect(() => {
+    console.log("quizData:", quizData);
+    console.log("previous:", previous);
+    console.log("previous results:", previous?.results);
     const fetchOutput = async () => {
       try {
-        const result = await getQuizOutput(quizData);
+        const result = await getQuizOutput(quizData || previous?.results);
 
         // Get the string inside result.descriptionSummary
         let rawJsonString = result.descriptionSummary || "";
