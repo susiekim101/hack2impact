@@ -94,10 +94,6 @@ const Results = () => {
         </div>
       </div>
 
-      <Link to="/quiz">
-        <button>Retake Quiz</button>
-      </Link>
-
       <section className={styles.waveSection}>
         <div className={styles.waveContent}>
           <h3 className={styles.waveHeading}>Recommended Elements</h3>
@@ -115,6 +111,11 @@ const Results = () => {
           </ul>
         </div>
       </section>
+
+      <Link to="/quiz">
+        <button className={styles.button}>Retake Quiz</button>
+      </Link>
+
     </div>
   );
 };

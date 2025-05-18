@@ -80,7 +80,7 @@
 
 .waveSection {
    width: 100%;
-   background: url('../assets/svg/wave.svg') no-repeat bottom center;
+   background: url('../assets/svg/BetterWave.svg') no-repeat bottom center;
    background-size: cover;
    color: white;
    padding-top: 3rem;
@@ -104,7 +104,7 @@
 }
 
 .wave {
-   position: absolute;
+   position: fixed;
    display: block;
    bottom: 0;
    left: 0;
@@ -112,4 +112,16 @@
    height: auto;
    z-index: 1;
    pointer-events: none;
+}
+
+.button {
+  margin-top: 0.7rem;
+  width: 13vw;
+  padding: 1.5vh 0;
+  border: 0.3vh solid #650909;
+  border-radius: 2vh;
+  background-color: #e1c1ce;
+  cursor: pointer;
+  margin-bottom: 7vh;
+  color: #650909;
 }
