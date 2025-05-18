@@ -9,3 +9,9 @@
     border-radius: 5px;
     padding: 5px;
 }
+
+.caption {
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 5px;
+}

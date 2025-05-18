@@ -18,3 +18,9 @@
 .option:hover {
   border: 3px solid #c09726;
 }
+
+.caption {
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 5px;
+}
