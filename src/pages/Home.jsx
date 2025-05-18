@@ -16,13 +16,13 @@ function Home() {
 
   return (
     <div className={styles.parentContainer}>
-      <div className={styles.titleContainer}>
+        <h1 class={styles.titleContainer}>Interior Design Assessment</h1>
+        <div className={styles.titleContainer}>
         <img
           src={logo}
           alt="Tori in the House Logo"
           className={styles.logoImage}
         />
-        <h1 class="text-sm">Interior Design Quiz</h1>
       </div>
 
       <div className={styles.buttonContainer}>
