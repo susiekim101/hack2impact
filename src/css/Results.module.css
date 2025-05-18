@@ -83,12 +83,13 @@
    background: url('../assets/svg/BetterWave.svg') no-repeat bottom center;
    background-size: cover;
    color: white;
-   padding-top: 3rem;
+   padding-top: 5rem;
+   padding-bottom: 7rem;
+   padding-left: 3rem;
 }
 
 .waveContent {
    padding-top: 2rem;
-   max-width: 800px;
    margin: 0 auto;
    text-align: left;
    padding-bottom: 2rem;
@@ -101,17 +102,6 @@
 .waveHeading {
    font-weight: bold;
    font-size: large;
-}
-
-.wave {
-   position: fixed;
-   display: block;
-   bottom: 0;
-   left: 0;
-   width: 100vw;
-   height: auto;
-   z-index: 1;
-   pointer-events: none;
 }
 
 .button {
