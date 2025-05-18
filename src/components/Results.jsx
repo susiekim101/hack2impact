@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import CloverSvg from "../assets/svg/clover.svg";
 import styles from "../css/Results.module.css";
 import { Link } from "react-router-dom";
+import tealclover from '../assets/tealclover.png'
 
 /*
 const tempImages = [
@@ -94,7 +95,10 @@ const Results = () => {
         </div>
       </div>
 
+
+
       <section className={styles.waveSection}>
+        <img src={tealclover} alt="teal clover" className={styles.spinningImage}></img>
         <div className={styles.waveContent}>
           <h3 className={styles.waveHeading}>Recommended Elements</h3>
           <ul>
