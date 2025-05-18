@@ -15,6 +15,21 @@ import stone from "../assets/texture/stone.png";
 import velvet from "../assets/texture/velvet.png";
 import wood from "../assets/texture/wood.png";
 import woven from "../assets/texture/woven.png";
+import colorful from "../assets/decor/colorful.png";
+import cozy from "../assets/decor/cozy.png";
+import homey from "../assets/decor/homey.png";
+import minimal from "../assets/decor/minimal.png";
+import nature from "../assets/decor/nature.png";
+import clean from "../assets/furniture/clean.png";
+import modern from "../assets/furniture/modern.png";
+import soft from "../assets/furniture/soft.png";
+import vintage from "../assets/furniture/vintage.png";
+import natural from "../assets/furniture/wood.png";
+import animal from "../assets/patterns/animal.png";
+import floral from "../assets/patterns/floral.png";
+import plaid from "../assets/patterns/plaid.png";
+import polka from "../assets/patterns/polka.png";
+import stripe from "../assets/patterns/stripe.png";
 
 const questions = [
   {
@@ -153,7 +168,15 @@ const questions = [
         id: "preferreScent",
         type: "multiselect",
         label: "Which scents help you feel calm or at home?",
-        options: [ "Woody 🪵", "Earthy 🌎", "Herbal 🌿", "Gentle Citrus 🍊", "Fresh Linen 🛌", "Clean Air 🌬️", "I'm not sure 😊"],
+        options: [
+          "Woody 🪵",
+          "Earthy 🌎",
+          "Herbal 🌿",
+          "Gentle Citrus 🍊",
+          "Fresh Linen 🛌",
+          "Clean Air 🌬️",
+          "I'm not sure 😊",
+        ],
       },
       {
         id: "scentsDislike",
@@ -283,19 +306,54 @@ const questions = [
         type: "select",
         label: "Which furniture style feels most comforting to you?",
         options: [
-          "Soft and cushioned (e.g., overstuffed sofas, plush armchairs)",
-          "Clean and simple (e.g., minimal designs with smooth surfaces)",
-          "Vintage or homey (e.g., cozy, mismatched pieces that feel lived-in)",
-          "Modern and structured (e.g., sleek lines, neutral tones)",
-          "Natural materials (e.g., wooden furniture, woven details)",
-          "I’m not sure",
+          {
+            label: "Soft and cushioned",
+            image: soft,
+          },
+          {
+            label: "Clean and simple",
+            image: clean,
+          },
+          {
+            label: "Vintage or homey",
+            image: vintage,
+          },
+          {
+            label: "Modern and structured",
+            image: modern,
+          },
+          {
+            label: "Natural materials",
+            image: natural,
+          },
         ],
       },
       {
         id: "patterns",
         type: "select",
         label: "What patterns make you feel happiest?",
-        options: ["Stripes", "Polka dots", "Floral", "Plaid", "Animal Print"],
+        options: [
+          {
+            label: "Stripes",
+            image: stripe,
+          },
+          {
+            label: "Polka dots",
+            image: polka,
+          },
+          {
+            label: "Floral",
+            image: floral,
+          },
+          {
+            label: "Plaid",
+            image: plaid,
+          },
+          {
+            label: "Animal Print",
+            image: animal,
+          },
+        ],
       },
       {
         id: "decorStyle",
@@ -303,12 +361,29 @@ const questions = [
         label:
           "Which of the following best describes the kind of decor that feels most comforting to you?",
         options: [
-          "Minimal and uncluttered (few items, lots of open space)",
-          "Warm and cozy (pillows, blankets, warm lighting)",
-          "Lived-in and homey (personal items, books, framed photos)",
-          "Nature-inspired (plants, wood, landscape art)",
-          "Colorful and expressive (art, vibrant textiles, handmade items)",
-          "I’m not sure",
+          {
+            label: "Minimal and uncluttered",
+            image: minimal,
+          },
+          {
+            label: "Warm and cozy",
+            image: cozy,
+          },
+          {
+            label: "Lived-in and homey",
+            image: homey,
+          },
+          {
+            label: "Nature-inspired",
+            image: nature,
+          },
+          {
+            label: "Colorful and expressive",
+            image: colorful,
+          },
+          {
+            label: "I’m not sure",
+          },
         ],
       },
       {
