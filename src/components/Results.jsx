@@ -3,6 +3,7 @@ import getQuizOutput from "../utils/getQuizOutput";
 import { useLocation } from "react-router-dom";
 import CloverSvg from '../assets/svg/clover.svg';
 import styles from "../css/Results.module.css";
+import { useNavigate, Link } from "react-router-dom";
 
 /*
 const tempImages = [
@@ -91,7 +92,12 @@ const Results = () => {
         </div>
       </div>
 
-      <section className={styles.waveSection}>
+      <Link to="/quiz">
+        <button>Retake Quiz</button>
+      </Link>
+
+      <div className={styles.waveSection}>
+        <img src={BottomWave} alt="Wave bottom" className={styles.wave} />
         <div className={styles.waveContent}>
           <h3 className={styles.waveHeading}>Recommended Elements</h3>
           <ul>

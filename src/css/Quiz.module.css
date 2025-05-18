@@ -82,6 +82,11 @@
   justify-content: space-between;
 }
 
+.next,
+.prev {
+  margin-top: 1rem;
+}
+
 .next:hover,
 .prev:hover {
   cursor: pointer;

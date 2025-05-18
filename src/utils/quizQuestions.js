@@ -1,7 +1,7 @@
 import babypastel from "../assets/colorpalettes/babypastel.png";
 import earthy1 from "../assets/colorpalettes/earthy1.png";
 import earthy2 from "../assets/colorpalettes/earthy2.png";
-import forest from "../assets/colorpalettes/forest.png";
+
 import monogray from "../assets/colorpalettes/monochromaticgray.png";
 import monoslate from "../assets/colorpalettes/monochromaticslate.png";
 import monobrown from "../assets/colorpalettes/monochromebrown.png";
@@ -109,10 +109,7 @@ const questions = [
             label: "Earthy brown and green",
             image: earthy2,
           },
-          {
-            label: "Forest green and dirt brown",
-            image: forest,
-          },
+
           {
             label: "Monochromatic shades of gray",
             image: monogray,
