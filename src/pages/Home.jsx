@@ -14,7 +14,7 @@ function Home() {
 
   const scatteredImageData = [
     { src: tealclover, top: 23, left: 5, size: 80 },
-    { src: yellowclover, top: 21, left: 29, size: 80 },
+    { src: yellowclover, top: 23, left: 29, size: 80 },
     { src: maroonclover, top: 53, left: 16, size: 80 },
     { src: yellowclover, top: 82, left: 3, size: 80 },
     { src: tealclover, top: 83, left: 28, size: 80 },
@@ -47,7 +47,8 @@ function Home() {
         ))}
       </div>
 
-      <h1 className={styles.titleContainer}>Interior Design Assessment</h1>
+      <h1 className={styles.titleContainer}>Stile</h1>
+      <h1 className={styles.subTitleContainer}>Interior Design Assessment</h1>
       <div className={styles.titleContainer}>
         <img
           src={logo}
