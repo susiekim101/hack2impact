@@ -1,5 +1,6 @@
 import styles from "../css/Login.module.css";
-import { signup, signupWithGoogle } from "../firebase/auth.js";
+import { signup } from "../firebase/auth.js";
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -36,6 +37,7 @@ export default function Signup() {
 
     try {
       const user = await signup(email, password);
+
       console.log("User signed up:", user);
       setError("");
       navigate("/quiz");

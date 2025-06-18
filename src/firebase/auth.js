@@ -4,6 +4,7 @@ import {
   signOut,
   signInWithPopup,
   GoogleAuthProvider,
+  sendEmailVerification,
 } from "firebase/auth";
 
 import { auth, provider } from "./config";

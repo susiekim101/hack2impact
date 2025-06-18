@@ -1,0 +1,406 @@
+[
+  {
+    "section": "Basic Information",
+    "questions": [
+      {
+        "id": "firstName",
+        "type": "text",
+        "label": "First Name",
+        "style": "small"
+      },
+      {
+        "id": "lastName",
+        "type": "text",
+        "label": "Last Name",
+        "style": "small"
+      },
+      {
+        "id": "phone",
+        "type": "text",
+        "label": "Phone Number",
+        "style": "small"
+      },
+      { "id": "email", "type": "email", "label": "Email", "style": "small" },
+      {
+        "id": "birthdate",
+        "type": "date",
+        "label": "Birthdate",
+        "style": "small"
+      },
+      {
+        "id": "gender",
+        "type": "select",
+        "label": "Gender",
+        "style": "small",
+        "options": ["Male", "Female", "Non-binary", "Prefer not to say"]
+      },
+      {
+        "id": "ethnicity",
+        "type": "multiselect",
+        "label": "Which of the following ethnicities/races do you identify with? (Select all that apply)",
+        "style": "large",
+        "options": [
+          "Latinx/Hispanic",
+          "Black/African American",
+          "Pacific Islander",
+          "Asian",
+          "Caucasian",
+          "Indigenous/Native American",
+          "Other"
+        ]
+      },
+      {
+        "id": "household",
+        "type": "select",
+        "label": "How many people are in your household?",
+        "style": "large",
+        "options": ["1", "2", "3", "4+"]
+      },
+      {
+        "id": "disabilities",
+        "type": "textarea",
+        "label": "Do you have any disabilities?",
+        "style": "large"
+      }
+    ]
+  },
+
+  {
+    "section": "Preferences",
+    "questions": [
+      {
+        "id": "colorPalettes",
+        "type": "multiselect",
+        "label": "Which color palettes make you feel most at ease?",
+        "options": [
+          {
+            "label": "Baby pastel pink and blue",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-pastel.jpg?alt=media&token=33a13bf4-c789-4b4b-b4c8-dcb424e18eac"
+          },
+          {
+            "label": "Pastel earthy brown and green",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-earth.jpg?alt=media&token=47c4969c-41cb-445a-a2e4-66d8f250b2f2"
+          },
+          {
+            "label": "Earthy brown and green",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-forest.jpg?alt=media&token=ee2ca294-bbb5-490c-aafb-e8720ec5d098"
+          },
+
+          {
+            "label": "Monochromatic shades of gray",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-monochrome.jpg?alt=media&token=ed01337a-3cbe-48c8-b73f-1921fc00f9ce"
+          },
+          {
+            "label": "Monochromatic shades of slate blue",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-slate.jpg?alt=media&token=8d34d9f7-1506-4a70-a4cb-578ef99f412d"
+          },
+          {
+            "label": "Monochromatic shades of brown",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-brown.jpg?alt=media&token=e6f44075-2468-4121-a60d-fc50eb7ec7e5"
+          },
+          {
+            "label": "Bright ocean blues and green",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-ocean.jpg?alt=media&token=ffce1075-bc67-4077-9249-34de45cfb316"
+          },
+          {
+            "label": "Light ocean blue",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-teal.jpg?alt=media&token=f7e91e66-a915-4c89-b018-dee1a333f9ee"
+          },
+          {
+            "label": "Pink and orange pastel ",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fcolor-palettes%2Fcolors-peach.jpg?alt=media&token=5ee4df86-1d0c-4534-ae94-f5f10aacace3"
+          }
+        ]
+      },
+      {
+        "id": "textures",
+        "type": "multiselect",
+        "label": "Which textures make you feel most comfortable?",
+        "options": [
+          {
+            "label": "cotton",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-cotton.jpg?alt=media&token=87c5050e-7704-4ceb-b32e-d8e7eeb8e0bd"
+          },
+          {
+            "label": "fleece",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-fleece.jpg?alt=media&token=0a75f6cb-ada1-42bc-9e10-20ede28c1946"
+          },
+          {
+            "label": "microfiber",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-microfiber.jpg?alt=media&token=9dab1072-261e-4ddf-8caa-9cdeb4708e68"
+          },
+          {
+            "label": "stone",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-stone.jpg?alt=media&token=d8351da5-f0c5-4b7d-96d8-ed706d043034"
+          },
+          {
+            "label": "velvet",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-velvet.jpg?alt=media&token=71b15c75-f7e6-41bf-a6ff-013d65693e6a"
+          },
+          {
+            "label": "wood",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-wood.jpg?alt=media&token=9f1aa065-d909-4e53-9556-c90a96265fa6"
+          },
+          {
+            "label": "woven",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ftextures%2Ftexture-woven.jpg?alt=media&token=f5048c24-6c92-4d87-88ea-ee80add6aef3"
+          }
+        ]
+      },
+      {
+        "id": "preferredScent",
+        "type": "multiselect",
+        "label": "Which scents help you feel calm or at home?",
+        "options": [
+          "Woody 🪵",
+          "Earthy 🌎",
+          "Herbal 🌿",
+          "Gentle Citrus 🍊",
+          "Fresh Linen 🛌",
+          "Clean Air 🌬️",
+          "I'm not sure 😊"
+        ]
+      },
+      {
+        "id": "scentsDislike",
+        "type": "multiselect",
+        "label": "Are there any scents you actively dislike or avoid?",
+        "options": [
+          "Strong floral perfumes 💐",
+          "Bleach or chemical cleaners 🧪",
+          "Smoke or incense 🔥",
+          "Spicy or musky scents 🌶️",
+          "Food-based smells (e.g., vanilla, baked goods) 🧁",
+          "I’m sensitive to all strong smells 😖"
+        ]
+      },
+      {
+        "id": "allergies",
+        "type": "textarea",
+        "label": "Are you allergic to anything?"
+      }
+    ]
+  },
+
+  {
+    "section": "Sensory Triggers",
+    "questions": [
+      {
+        "id": "sensoryTriggers",
+        "type": "multiselect",
+        "label": "Please check anything that can make you feel uneasy or overwhelmed",
+        "options": [
+          "Bright, fluorescent lighting 🌟",
+          "Sudden loud noises 💥",
+          "Strong artificial smells 👃",
+          "Cluttered or messy spaces 🛠️",
+          "Mirrors facing the bed or other sensitive areas 🪞",
+          "Not seeing the entrance to the room 🚪",
+          "Small, enclosed spaces 🏠",
+          "Large, open spaces with no boundaries 🌳",
+          "Busy or harsh patterns (e.g., zigzags, checkers) 🏁",
+          "Feeling watched (e.g., visible windows, no privacy) 👀"
+        ]
+      }
+    ]
+  },
+
+  {
+    "section": "Layout & Safety",
+    "questions": [
+      {
+        "id": "layoutSafety",
+        "type": "select",
+        "label": "When you think of your ideal space, what layout feels safest?",
+        "options": [
+          "Open layout with clear sightlines to the door 🪟",
+          "Defined rooms with doors and clear boundaries 🚪",
+          "A mix of open and private areas with a personal corner 🪑",
+          "I’m not sure 😊"
+        ]
+      },
+      {
+        "id": "controlOfSpace",
+        "type": "select",
+        "label": "What helps you feel in control of your space?",
+        "options": [
+          "Locks on doors 🔒",
+          "A defined personal/private area 📪",
+          "Ability to rearrange furniture 🛋️",
+          "Very simple/minimal setup 🪴",
+          "I’m not sure 😊"
+        ]
+      },
+      {
+        "id": "lightingPreference",
+        "type": "select",
+        "label": "What kind of lighting feels best to you?",
+        "options": [
+          "Bright natural light ☀️",
+          "Dim, soft light (lamps, warm tones) 🕯️",
+          "I like being able to control it (dimmers, curtains) 💡",
+          "I prefer low light during the day 🌙",
+          "I’m not sure"
+        ]
+      },
+      {
+        "id": "relaxingSounds",
+        "type": "select",
+        "label": "What sounds help you relax?",
+        "options": [
+          "Silence 🤫",
+          "Nature sounds (e.g., rain, birds) 🌧️",
+          "Music or white noise 🎵",
+          "Having a TV or radio on in the background 📺",
+          "Loud noises stress me out 🔇"
+        ]
+      }
+    ]
+  },
+
+  {
+    "section": "Furniture & Decor Preferences",
+    "questions": [
+      {
+        "id": "furnitureStyle",
+        "type": "select",
+        "label": "Which furniture style feels most comforting to you?",
+        "options": [
+          {
+            "label": "Soft and cushioned",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ffurniture%2Ffurniture-soft.jpg?alt=media&token=ae7b0b3e-6b46-46d5-b434-606d367ab05b"
+          },
+          {
+            "label": "Clean and simple",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ffurniture%2Ffuriture-clean.jpg?alt=media&token=ce989eda-ebbd-42b1-9572-eec6bd067c83"
+          },
+          {
+            "label": "Vintage or homey",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ffurniture%2Ffurniture-vinage.jpg?alt=media&token=b63a48e6-39c3-4a0c-8e62-d88906a7040b"
+          },
+          {
+            "label": "Modern and structured",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ffurniture%2Ffurniture-modern.jpg?alt=media&token=ee6a31a2-f924-41b6-8de4-9e721da0fa97"
+          },
+          {
+            "label": "Natural materials like wood",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Ffurniture%2Ffurniture-wood.jpg?alt=media&token=9c741849-7a69-42c4-b8ed-56f68d0acec4"
+          }
+        ]
+      },
+      {
+        "id": "patterns",
+        "type": "select",
+        "label": "What patterns make you feel happiest?",
+        "options": [
+          {
+            "label": "Stripes",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fpatterns%2Fpattern-stripe.jpg?alt=media&token=57b49074-b2c9-4d41-8078-17776436f107"
+          },
+          {
+            "label": "Polka dots",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fpatterns%2Fpattern-polka.jpg?alt=media&token=f09e5662-38d9-40cd-a1f0-fb5ff297b480"
+          },
+          {
+            "label": "Floral",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fpatterns%2Fpattern-floral.jpg?alt=media&token=f6507ec7-45ae-41ed-a44f-473fa99e05e8"
+          },
+          {
+            "label": "Plaid",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fpatterns%2Fpattern-plaid.jpg?alt=media&token=942b245e-7208-4fc6-90dd-87d518aef3b3"
+          },
+          {
+            "label": "Animal Print",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fpatterns%2Fpattern-animal.jpg?alt=media&token=4e4ce7fb-4f58-453e-98ef-b51f7d18df69"
+          }
+        ]
+      },
+      {
+        "id": "decorStyle",
+        "type": "select",
+        "label": "Which of the following best describes the kind of decor that feels most comforting to you?",
+        "options": [
+          {
+            "label": "Minimal and uncluttered",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fdecor%2Fdecor-minimal.jpg?alt=media&token=795b15aa-9793-4d0f-8019-afb99ed8e9d7"
+          },
+          {
+            "label": "Warm and cozy",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fdecor%2Fdecor-warm.jpg?alt=media&token=318c02eb-4cca-48cc-b716-3ecfa5156ef0"
+          },
+          {
+            "label": "Lived-in and homey",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fdecor%2Fdecor-homey.jpg?alt=media&token=4f9d17f4-49dd-436d-a81f-cf1084f4fb08"
+          },
+          {
+            "label": "Nature-inspired",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fdecor%2Fdecor-nature.jpg?alt=media&token=5eb7fc92-6071-4719-98f2-4b2d5f7af0e9"
+          },
+          {
+            "label": "Colorful and expressive",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fdecor%2Fdecor-colorful.jpg?alt=media&token=c0723495-7534-4f0d-9aac-0ec249476876"
+          }
+        ]
+      },
+      {
+        "id": "culturalItems",
+        "type": "multiselect",
+        "label": "Are there any cultural, spiritual, or religious items that make a space feel more like home to you?",
+        "options": [
+          {
+            "label": "Religious or spiritual symbols ",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fsacred-items%2Fitems-religion.jpg?alt=media&token=a98530d6-91a0-4802-aece-58121c36db60"
+          },
+          {
+            "label": "Cultural fabrics or patterns",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fsacred-items%2Fitems-fabric.jpg?alt=media&token=2d6ec2d1-d774-4f8c-831c-79280561f8f9"
+          },
+          {
+            "label": "Family photos or heirlooms",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fsacred-items%2Fitems-family.jpg?alt=media&token=ef18184e-c937-47e4-9772-a3435747e761"
+          },
+          {
+            "label": "Art or imagery from my cultural background",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fsacred-items%2Fitems-cultural.jpg?alt=media&token=b0562f26-5012-4f5e-892d-e54a13306cbb"
+          },
+          {
+            "label": "Plants or nature elements",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fsacred-items%2Fitems-plant.jpg?alt=media&token=0a3dd712-2fbd-4d67-8ad3-4d70fc98826f"
+          }
+        ]
+      },
+      {
+        "id": "wallDecor",
+        "type": "select",
+        "label": "What  types of wall decorations do you feel most at ease with?",
+        "options": [
+          {
+            "label": "Calming art",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fwall-decor%2Fwall-calming.jpg?alt=media&token=1660c90a-151d-4786-a5e7-fae79414f926"
+          },
+          {
+            "label": "Personal photos or photo collages",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fwall-decor%2Fwall-photos.jpg?alt=media&token=6b32c8ee-3ac9-49e7-b616-abe9e8af1432"
+          },
+          {
+            "label": "Blank or mostly empty walls",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fwall-decor%2Fwall-blank.jpg?alt=media&token=42933f85-d73a-4c00-975a-2d141843cb53"
+          },
+          {
+            "label": "Inspirational quotes or affirmations",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fwall-decor%2Fwall-inspirational.jpg?alt=media&token=fa69fc79-488b-4021-84fe-91ff8708348a"
+          },
+          {
+            "label": "Colorful, expressive art (abstract, cultural, or handmade)",
+            "image": "https://firebasestorage.googleapis.com/v0/b/hack2impact-69417.firebasestorage.app/o/quiz-pictures%2Fwall-decor%2Fwalls-colorful.jpg?alt=media&token=94b77df9-1830-4aed-9a27-8c10ce2d4348"
+          }
+        ]
+      },
+      {
+        "id": "pets",
+        "type": "text",
+        "label": "Do you have any pets? If yes, what pets do you have?"
+      }
+    ]
+  }
+]
